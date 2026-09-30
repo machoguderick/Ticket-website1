@@ -16,10 +16,7 @@
     --muted:#9a9ab2;
     --accent:#8b5cf6;
     --accent-2:#ec4899;
-    --tg:#229ED9;
-    --good:#22c55e;
     --radius:14px;
-    --shadow:0 24px 60px -20px rgba(0,0,0,.85);
     --serif:"Times New Roman", Times, "Liberation Serif", "Nimbus Roman", Georgia, serif;
   }
   *{box-sizing:border-box;margin:0;padding:0}
@@ -35,79 +32,65 @@
   button{cursor:pointer;border:none;background:none}
   ::selection{background:rgba(139,92,246,.4)}
   ::-webkit-scrollbar{width:10px;height:10px}
-  ::-webkit-scrollbar-track{background:transparent}
   ::-webkit-scrollbar-thumb{background:rgba(255,255,255,.14);border-radius:10px;border:2px solid var(--bg)}
-  ::-webkit-scrollbar-thumb:hover{background:rgba(255,255,255,.26)}
 
-  /* ---------- Icon system ---------- */
   .ic{width:1em;height:1em;display:inline-block;vertical-align:-.14em;flex-shrink:0;pointer-events:none}
-  .ic-lg{width:1.15em;height:1.15em;vertical-align:-.18em}
-  .ic-sm{width:.9em;height:.9em;vertical-align:-.1em}
 
-  /* ---------- Header ---------- */
+  /* Header */
   header{
     position:sticky;top:0;z-index:60;
-    background:rgba(8,8,15,.82);
-    backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);
+    background:rgba(8,8,15,.94);
     border-bottom:1px solid var(--border);
   }
   .header-inner{max-width:1360px;margin:0 auto;padding:13px 22px;display:flex;align-items:center;gap:16px}
-  .logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:20px;letter-spacing:.2px;flex-shrink:0;user-select:none}
+  .logo{display:flex;align-items:center;gap:9px;font-weight:700;font-size:20px;flex-shrink:0;user-select:none}
   .logo-mark{
     width:30px;height:30px;border-radius:9px;
     background:linear-gradient(135deg,var(--accent),var(--accent-2));
     display:grid;place-items:center;font-size:16px;color:#fff;
-    box-shadow:0 6px 18px -4px rgba(139,92,246,.7);
   }
   .logo span{background:linear-gradient(100deg,#fff,#c4b5fd);-webkit-background-clip:text;background-clip:text;color:transparent}
   nav.main-nav{display:flex;gap:2px;margin-left:4px}
   nav.main-nav button{padding:8px 12px;border-radius:8px;font-size:15px;color:var(--muted);transition:.18s}
   nav.main-nav button:hover{color:var(--text);background:rgba(255,255,255,.06)}
   nav.main-nav button.active{color:var(--text);background:rgba(139,92,246,.18)}
-
   .header-search{flex:1;max-width:330px;margin-left:auto;position:relative}
   .header-search input{
     width:100%;padding:9px 14px 9px 34px;border-radius:10px;
     background:var(--surface-2);border:1px solid var(--border);
     font-size:15px;outline:none;transition:.2s;
   }
-  .header-search input:focus{border-color:rgba(139,92,246,.65);background:var(--surface-3);box-shadow:0 0 0 3px rgba(139,92,246,.14)}
+  .header-search input:focus{border-color:rgba(139,92,246,.65);background:var(--surface-3)}
   .header-search input::placeholder{color:#6c6c85}
   .header-search .s-icon{position:absolute;left:11px;top:50%;transform:translateY(-50%);font-size:15px;opacity:.5;pointer-events:none;color:#9a9ab2}
   .cart-btn{
-    position:relative;display:flex;align-items:center;gap:7px;
+    display:flex;align-items:center;gap:7px;
     padding:9px 14px;border-radius:10px;font-size:15px;
     background:linear-gradient(135deg,var(--accent),var(--accent-2));
     color:#fff;transition:.2s;flex-shrink:0;
-    box-shadow:0 8px 22px -8px rgba(139,92,246,.9);
   }
-  .cart-btn:hover{transform:translateY(-1px);filter:brightness(1.08)}
+  .cart-btn:hover{filter:brightness(1.08)}
   .cart-btn .cart-count{background:rgba(0,0,0,.35);border-radius:20px;padding:0 7px;font-size:13px;min-width:19px;text-align:center}
 
-  /* ---------- Telegram banner ---------- */
+  /* Banner */
   .tg-banner{
-    background:linear-gradient(90deg,rgba(34,158,217,.16),rgba(139,92,246,.16));
-    border-bottom:1px solid rgba(34,158,217,.28);
+    background:linear-gradient(90deg,rgba(34,158,217,.14),rgba(139,92,246,.14));
+    border-bottom:1px solid rgba(34,158,217,.24);
     padding:8px 20px;text-align:center;font-size:14px;color:#bae6fd;
     display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;
   }
   .tg-banner b{color:#fff}
   .tg-banner .tg-handle{
-    background:rgba(34,158,217,.25);border:1px solid rgba(34,158,217,.45);
+    background:rgba(34,158,217,.22);border:1px solid rgba(34,158,217,.4);
     padding:1px 9px;border-radius:100px;font-size:13.5px;color:#e0f2fe;
     font-family:"Courier New",monospace;
   }
 
-  /* ---------- Hero ---------- */
-  .hero{position:relative;padding:64px 22px 46px;text-align:center;overflow:hidden}
-  .hero::before{
-    content:"";position:absolute;left:50%;top:-320px;transform:translateX(-50%);
-    width:1200px;height:740px;pointer-events:none;
+  /* Hero */
+  .hero{position:relative;padding:60px 22px 44px;text-align:center;overflow:hidden;
     background:
-      radial-gradient(ellipse 45% 50% at 32% 42%, rgba(139,92,246,.40), transparent 65%),
-      radial-gradient(ellipse 40% 45% at 70% 30%, rgba(236,72,153,.30), transparent 65%),
-      radial-gradient(ellipse 50% 40% at 50% 68%, rgba(56,189,248,.15), transparent 65%);
-    filter:blur(30px);
+      radial-gradient(ellipse 60% 70% at 35% 25%, rgba(139,92,246,.28), transparent 70%),
+      radial-gradient(ellipse 55% 65% at 68% 20%, rgba(236,72,153,.20), transparent 70%);
   }
   .hero-inner{position:relative;max-width:880px;margin:0 auto}
   .hero-badge{
@@ -115,9 +98,8 @@
     padding:5px 14px;border-radius:100px;margin-bottom:20px;
     background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);color:#c4b5fd;
   }
-  .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:var(--good);box-shadow:0 0 8px var(--good);animation:pulse 2s infinite}
-  @keyframes pulse{0%,100%{opacity:1}50%{opacity:.35}}
-  .hero h1{font-size:clamp(30px,5.4vw,54px);line-height:1.08;letter-spacing:-.5px;font-weight:700;margin-bottom:16px}
+  .hero-badge .dot{width:6px;height:6px;border-radius:50%;background:#22c55e}
+  .hero h1{font-size:clamp(30px,5.4vw,54px);line-height:1.08;font-weight:700;margin-bottom:16px}
   .hero h1 em{font-style:italic;background:linear-gradient(100deg,#a78bfa,#ec4899 55%,#f97316);-webkit-background-clip:text;background-clip:text;color:transparent}
   .hero p{color:var(--muted);font-size:clamp(15px,1.7vw,18px);max-width:580px;margin:0 auto 30px;line-height:1.6}
 
@@ -125,7 +107,7 @@
     display:flex;align-items:center;gap:8px;padding:7px;
     border-radius:16px;background:var(--surface);
     border:1px solid var(--border-strong);
-    box-shadow:var(--shadow);max-width:520px;margin:0 auto;
+    max-width:520px;margin:0 auto;
   }
   .cta-field{flex:1;display:flex;align-items:center;gap:9px;padding:8px 12px;min-width:0;color:var(--muted);font-size:15px}
   .cta-field select{width:100%;background:none;border:none;outline:none;font-size:15px;cursor:pointer;color:var(--text);min-width:0}
@@ -135,9 +117,9 @@
     background:linear-gradient(135deg,var(--accent),var(--accent-2));
     transition:.2s;display:inline-flex;align-items:center;gap:8px;
   }
-  .search-go:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .search-go:hover{filter:brightness(1.1)}
 
-  /* ---------- Category strip ---------- */
+  /* Categories */
   .cats{
     max-width:1360px;margin:0 auto;padding:0 22px 6px;width:100%;
     display:flex;gap:8px;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch;
@@ -146,18 +128,18 @@
   .cat{
     display:flex;align-items:center;gap:7px;padding:9px 16px;border-radius:100px;
     background:var(--surface);border:1px solid var(--border);
-    font-size:15px;color:var(--muted);white-space:nowrap;transition:.2s;
+    font-size:15px;color:var(--muted);white-space:nowrap;transition:.18s;
   }
   .cat .ic{font-size:15px}
-  .cat:hover{border-color:var(--border-strong);color:var(--text);transform:translateY(-2px)}
+  .cat:hover{color:var(--text);border-color:var(--border-strong)}
   .cat.active{
     background:linear-gradient(135deg,rgba(139,92,246,.9),rgba(236,72,153,.9));
-    color:#fff;border-color:transparent;box-shadow:0 10px 26px -10px rgba(139,92,246,.9);
+    color:#fff;border-color:transparent;
   }
 
-  /* ---------- Toolbar ---------- */
+  /* Toolbar */
   .toolbar{max-width:1360px;margin:24px auto 0;padding:0 22px;width:100%;display:flex;align-items:center;gap:12px;flex-wrap:wrap}
-  .toolbar h2{font-size:21px;font-weight:700;letter-spacing:-.2px}
+  .toolbar h2{font-size:21px;font-weight:700}
   .result-count{font-size:15px;color:var(--muted)}
   .toolbar .spacer{flex:1}
   .sort-wrap{position:relative}
@@ -165,36 +147,35 @@
     appearance:none;-webkit-appearance:none;
     padding:8px 32px 8px 13px;border-radius:9px;
     background:var(--surface-2);border:1px solid var(--border);
-    font-size:14.5px;cursor:pointer;outline:none;transition:.2s;
+    font-size:14.5px;cursor:pointer;outline:none;
   }
-  .sort-wrap select:focus{border-color:rgba(139,92,246,.6)}
   .sort-wrap::after{content:"▾";position:absolute;right:12px;top:50%;transform:translateY(-50%);pointer-events:none;opacity:.5;font-size:11px}
 
-  /* ---------- Grid ---------- */
+  /* Grid */
   .grid{
     max-width:1360px;margin:0 auto;padding:20px 22px 130px;width:100%;
     display:grid;grid-template-columns:repeat(auto-fill,minmax(248px,1fr));gap:20px;
   }
   .card{
     background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);
-    overflow:hidden;cursor:pointer;transition:.25s cubic-bezier(.2,.8,.3,1);
-    display:flex;flex-direction:column;animation:rise .42s backwards;
+    overflow:hidden;cursor:pointer;transition:transform .18s, border-color .18s;
+    display:flex;flex-direction:column;
+    content-visibility:auto;
+    contain-intrinsic-size:320px;
+    contain:layout style paint;
   }
-  @keyframes rise{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
-  .card:hover{transform:translateY(-5px);border-color:var(--border-strong);box-shadow:0 24px 46px -22px rgba(0,0,0,.95)}
+  .card:hover{transform:translateY(-4px);border-color:var(--border-strong)}
   .poster{position:relative;aspect-ratio:4/3;overflow:hidden;background:#1e1b4b}
   .poster-art{position:absolute;inset:0}
-  .poster-art svg{width:100%;height:100%;display:block;transition:transform .5s cubic-bezier(.2,.8,.3,1)}
-  .card:hover .poster-art svg{transform:scale(1.07)}
+  .poster-art svg{width:100%;height:100%;display:block}
   .poster::after{
     content:"";position:absolute;inset:0;pointer-events:none;
-    background:linear-gradient(to bottom,rgba(0,0,0,.30) 0%,transparent 32%,transparent 56%,rgba(0,0,0,.68) 100%);
+    background:linear-gradient(to bottom,rgba(0,0,0,.28) 0%,transparent 32%,transparent 58%,rgba(0,0,0,.66) 100%);
   }
   .date-badge{
     position:absolute;top:10px;left:10px;z-index:3;
     background:rgba(255,255,255,.96);color:#111;border-radius:9px;
     padding:5px 9px;text-align:center;line-height:1;
-    box-shadow:0 6px 16px rgba(0,0,0,.3);
   }
   .date-badge span{display:block;font-size:11px;font-weight:700;letter-spacing:.6px;color:#c81e4a}
   .date-badge strong{display:block;font-size:18px;font-weight:700;margin-top:1px}
@@ -202,16 +183,15 @@
     position:absolute;top:10px;right:10px;z-index:3;
     display:inline-flex;align-items:center;gap:5px;
     font-size:12.5px;padding:4px 9px;border-radius:100px;color:#fff;
-    background:rgba(0,0,0,.48);backdrop-filter:blur(8px);
+    background:rgba(0,0,0,.48);
     border:1px solid rgba(255,255,255,.22);
   }
   .hot-chip{
     position:absolute;top:44px;right:10px;z-index:3;
     display:inline-flex;align-items:center;gap:4px;
-    font-size:11.5px;letter-spacing:.5px;text-transform:uppercase;
+    font-size:11px;letter-spacing:.5px;text-transform:uppercase;
     padding:3px 8px;border-radius:100px;color:#fff;
     background:linear-gradient(135deg,#f97316,#ef4444);
-    box-shadow:0 6px 16px -6px rgba(239,68,68,.9);
   }
   .hot-chip .ic{font-size:11px}
   .poster-sub{
@@ -237,11 +217,11 @@
     border-top:1px solid var(--border);
   }
 
-  /* --- Price is display-only: not clickable, no redirect --- */
+  /* Price — display only, inert */
   .price{
     display:flex;flex-direction:column;line-height:1.15;min-width:0;
     cursor:default;user-select:none;-webkit-user-select:none;
-    pointer-events:none;   /* clicks pass through the price entirely */
+    -webkit-tap-highlight-color:transparent;
   }
   .price span{font-size:11.5px;color:#7c7c96;text-transform:uppercase;letter-spacing:.6px}
   .price strong{font-size:18px;font-weight:700}
@@ -249,18 +229,15 @@
   .btn-buy{
     display:inline-flex;align-items:center;gap:5px;
     padding:8px 12px;border-radius:9px;font-size:14px;color:#fff;
-    background:linear-gradient(135deg,#229ED9,#1d8ec4);
-    transition:.2s;white-space:nowrap;
-    box-shadow:0 8px 20px -9px rgba(34,158,217,.9);
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));
+    transition:.18s;white-space:nowrap;
   }
-  .btn-buy:hover{filter:brightness(1.12);transform:translateY(-1px)}
-  .btn-buy:active{transform:translateY(0)}
+  .btn-buy:hover{filter:brightness(1.12)}
   .btn-buy .ic{font-size:14px}
-  .btn-buy.purple{background:linear-gradient(135deg,var(--accent),var(--accent-2));box-shadow:0 8px 20px -9px rgba(139,92,246,.9)}
   .btn-ghost{
     display:inline-flex;align-items:center;gap:6px;
     padding:9px 14px;border-radius:9px;font-size:14px;
-    background:var(--surface-2);border:1px solid var(--border);color:var(--muted);transition:.2s;
+    background:var(--surface-2);border:1px solid var(--border);color:var(--muted);transition:.18s;
   }
   .btn-ghost:hover{color:#fff;border-color:var(--border-strong);background:var(--surface-3)}
 
@@ -269,27 +246,24 @@
   .empty h3{color:var(--text);font-size:20px;margin-bottom:8px}
   .empty p{font-size:15px}
 
-  /* ---------- Backdrop / modals ---------- */
+  /* Backdrop */
   .backdrop{
-    position:fixed;inset:0;background:rgba(4,4,10,.74);
-    backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);
-    opacity:0;pointer-events:none;transition:.28s;z-index:100;
+    position:fixed;inset:0;background:rgba(4,4,10,.78);
+    opacity:0;pointer-events:none;transition:opacity .22s;z-index:100;
   }
   .backdrop.open{opacity:1;pointer-events:auto}
 
+  /* Modals */
   .modal-wrap{
     position:fixed;inset:0;z-index:110;display:grid;place-items:center;padding:20px;
-    opacity:0;pointer-events:none;transition:.28s;
+    opacity:0;pointer-events:none;transition:opacity .22s;
   }
   .modal-wrap.open{opacity:1;pointer-events:auto}
   .modal{
     width:100%;max-width:800px;max-height:92vh;overflow-y:auto;
     background:var(--surface);border:1px solid var(--border-strong);border-radius:20px;
-    box-shadow:var(--shadow);transform:translateY(20px) scale(.97);
-    transition:.32s cubic-bezier(.2,.8,.3,1);
     display:flex;flex-direction:column;
   }
-  .modal-wrap.open .modal{transform:none}
   .modal-hero{
     position:relative;padding:32px 26px 28px;overflow:hidden;flex-shrink:0;min-height:200px;
     display:flex;align-items:flex-end;
@@ -298,21 +272,21 @@
   .m-art svg{width:100%;height:100%;display:block}
   .modal-hero::after{
     content:"";position:absolute;inset:0;
-    background:linear-gradient(to top,rgba(18,18,29,.97) 0%,rgba(18,18,29,.4) 55%,rgba(18,18,29,.22) 100%);
+    background:linear-gradient(to top,rgba(18,18,29,.97) 0%,rgba(18,18,29,.42) 55%,rgba(18,18,29,.22) 100%);
   }
   .modal-hero .m-info{position:relative;z-index:2;max-width:80%}
   .modal-hero .m-tag{
     display:inline-flex;align-items:center;gap:6px;
     font-size:13px;padding:4px 11px;border-radius:100px;
     background:rgba(0,0,0,.48);color:#fff;
-    border:1px solid rgba(255,255,255,.28);margin-bottom:12px;backdrop-filter:blur(6px);
+    border:1px solid rgba(255,255,255,.28);margin-bottom:12px;
   }
-  .modal-hero h2{font-size:clamp(22px,3.2vw,30px);font-weight:700;letter-spacing:-.3px;line-height:1.15;margin-bottom:6px;text-shadow:0 3px 16px rgba(0,0,0,.55)}
-  .modal-hero .m-sub{font-size:15px;font-style:italic;color:rgba(255,255,255,.92);text-shadow:0 2px 10px rgba(0,0,0,.55)}
+  .modal-hero h2{font-size:clamp(22px,3.2vw,30px);font-weight:700;line-height:1.15;margin-bottom:6px;text-shadow:0 3px 16px rgba(0,0,0,.55)}
+  .modal-hero .m-sub{font-size:15px;font-style:italic;color:rgba(255,255,255,.92)}
   .modal-close{
     position:absolute;top:12px;right:12px;z-index:5;
     width:34px;height:34px;border-radius:50%;display:grid;place-items:center;
-    background:rgba(0,0,0,.55);color:#fff;font-size:16px;backdrop-filter:blur(8px);
+    background:rgba(0,0,0,.55);color:#fff;font-size:16px;
     border:1px solid rgba(255,255,255,.2);transition:.2s;
   }
   .modal-close:hover{background:rgba(0,0,0,.85);transform:rotate(90deg)}
@@ -353,10 +327,10 @@
 
   .tier{
     display:flex;align-items:center;gap:12px;padding:13px 14px;border-radius:12px;
-    background:var(--surface-2);border:1px solid var(--border);margin-bottom:9px;transition:.2s;
+    background:var(--surface-2);border:1px solid var(--border);margin-bottom:9px;transition:.18s;
   }
   .tier:hover{border-color:var(--border-strong);background:var(--surface-3)}
-  .tier.selected{border-color:rgba(139,92,246,.65);background:rgba(139,92,246,.1);box-shadow:0 0 0 3px rgba(139,92,246,.1)}
+  .tier.selected{border-color:rgba(139,92,246,.65);background:rgba(139,92,246,.1)}
   .tier-info{flex:1;min-width:0}
   .tier-name{font-size:15px;font-weight:700;margin-bottom:2px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
   .tier-badge{font-size:11px;letter-spacing:.5px;text-transform:uppercase;padding:2px 7px;border-radius:5px}
@@ -366,11 +340,11 @@
   .tier-note{font-size:13px;color:#7c7c96}
   .tier-note.low{color:#fb923c}
 
-  /* Tier price is display-only — no click, no redirect */
+  /* Tier price — display only */
   .tier-price{
     font-size:16.5px;font-weight:700;white-space:nowrap;
     cursor:default;user-select:none;-webkit-user-select:none;
-    pointer-events:none;
+    -webkit-tap-highlight-color:transparent;
   }
 
   .stepper{
@@ -385,7 +359,6 @@
   .stepper button:disabled{opacity:.25;cursor:not-allowed}
   .stepper .qty{width:24px;text-align:center;font-size:15px;font-variant-numeric:tabular-nums}
 
-  /* Live running total inside modal */
   .live-total{
     display:flex;align-items:center;justify-content:space-between;gap:12px;
     margin-top:16px;padding:14px 16px;border-radius:12px;
@@ -398,7 +371,7 @@
 
   .modal-footer{
     position:sticky;bottom:0;margin-top:20px;
-    padding:14px 26px;background:rgba(18,18,29,.97);backdrop-filter:blur(12px);
+    padding:14px 26px;background:rgba(18,18,29,.98);
     border-top:1px solid var(--border);
     display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;
   }
@@ -407,13 +380,12 @@
   .total-box .tn{font-size:13px;color:var(--muted);margin-top:1px}
   .footer-actions{display:flex;gap:9px;flex-wrap:wrap}
 
-  /* ---------- Cart drawer ---------- */
+  /* Drawer */
   .drawer{
     position:fixed;top:0;right:0;bottom:0;width:min(410px,100%);z-index:120;
     background:var(--surface);border-left:1px solid var(--border-strong);
     display:flex;flex-direction:column;
-    transform:translateX(102%);transition:transform .34s cubic-bezier(.2,.8,.3,1);
-    box-shadow:-30px 0 70px -20px rgba(0,0,0,.9);
+    transform:translateX(102%);transition:transform .28s cubic-bezier(.2,.8,.3,1);
   }
   .drawer.open{transform:none}
   .drawer-head{padding:18px 20px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
@@ -421,16 +393,16 @@
   .drawer-head .pill{font-size:13px;background:rgba(139,92,246,.2);color:#c4b5fd;padding:2px 9px;border-radius:100px}
   .icon-btn{
     width:34px;height:34px;border-radius:8px;display:grid;place-items:center;
-    color:var(--muted);font-size:17px;transition:.2s;
+    color:var(--muted);font-size:17px;transition:.18s;
   }
   .icon-btn:hover{background:rgba(255,255,255,.08);color:#fff}
   .drawer-body{flex:1;overflow-y:auto;padding:16px 20px;-webkit-overflow-scrolling:touch}
-  .cart-item{
-    display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--border);
-    animation:rise .3s backwards;
+  .cart-item{display:flex;gap:12px;padding:13px 0;border-bottom:1px solid var(--border)}
+  .ci-poster{
+    width:54px;height:54px;border-radius:10px;flex-shrink:0;
+    display:grid;place-items:center;font-size:24px;color:#fff;
   }
-  .ci-poster{width:54px;height:54px;border-radius:10px;flex-shrink:0;overflow:hidden;box-shadow:0 6px 16px -7px rgba(0,0,0,.7)}
-  .ci-poster svg{width:100%;height:100%;display:block}
+  .ci-poster .ic{width:24px;height:24px}
   .ci-info{flex:1;min-width:0}
   .ci-title{font-size:14.5px;font-weight:700;line-height:1.3;margin-bottom:3px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
   .ci-tier{font-size:13px;color:#a78bfa;margin-bottom:2px}
@@ -451,36 +423,29 @@
   }
   .checkout-btn{
     width:100%;padding:15px;border-radius:12px;font-size:16px;color:#fff;
-    background:linear-gradient(135deg,#229ED9,#1d8ec4);transition:.2s;
-    box-shadow:0 14px 32px -14px rgba(34,158,217,1);
+    background:linear-gradient(135deg,#229ED9,#1d8ec4);transition:.18s;
     display:flex;align-items:center;justify-content:center;gap:9px;
     font-weight:700;
   }
-  .checkout-btn:hover{filter:brightness(1.1);transform:translateY(-1px)}
-  .checkout-btn:disabled{opacity:.35;cursor:not-allowed;transform:none;filter:none;box-shadow:none}
+  .checkout-btn:hover{filter:brightness(1.1)}
+  .checkout-btn:disabled{opacity:.35;cursor:not-allowed;filter:none}
   .secure-note{text-align:center;font-size:13px;color:#6c6c85;margin-top:11px;line-height:1.5}
 
-  /* ---------- Sticky basket bar ---------- */
+  /* Sticky basket bar */
   .basket-bar{
     position:fixed;left:0;right:0;bottom:0;z-index:95;
-    background:rgba(18,18,29,.97);
-    backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);
+    background:rgba(18,18,29,.98);
     border-top:1px solid var(--border-strong);
-    box-shadow:0 -18px 44px -18px rgba(0,0,0,.95);
     padding:11px 22px calc(11px + env(safe-area-inset-bottom));
     transform:translateY(110%);
-    transition:transform .34s cubic-bezier(.2,.8,.3,1);
+    transition:transform .28s cubic-bezier(.2,.8,.3,1);
   }
   .basket-bar.show{transform:none}
-  .basket-inner{
-    max-width:1360px;margin:0 auto;
-    display:flex;align-items:center;gap:16px;
-  }
+  .basket-inner{max-width:1360px;margin:0 auto;display:flex;align-items:center;gap:16px}
   .basket-icon{
     width:42px;height:42px;border-radius:11px;flex-shrink:0;
     background:linear-gradient(135deg,var(--accent),var(--accent-2));
-    display:grid;place-items:center;font-size:19px;color:#fff;
-    box-shadow:0 8px 22px -8px rgba(139,92,246,.9);position:relative;
+    display:grid;place-items:center;font-size:19px;color:#fff;position:relative;
   }
   .basket-icon .bubble{
     position:absolute;top:-5px;right:-5px;
@@ -491,24 +456,17 @@
   }
   .basket-summary{flex:1;min-width:0}
   .basket-count{font-size:13px;color:var(--muted);text-transform:uppercase;letter-spacing:.6px}
-  .basket-total{font-size:22px;font-weight:700;line-height:1.15;letter-spacing:-.3px}
+  .basket-total{font-size:22px;font-weight:700;line-height:1.15}
   .basket-items{font-size:13px;color:var(--muted);margin-top:1px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
   .basket-actions{display:flex;gap:9px;flex-shrink:0}
-  .basket-view{
-    padding:11px 15px;border-radius:10px;font-size:14.5px;
-    background:var(--surface-2);border:1px solid var(--border);color:var(--text);
-    transition:.2s;display:inline-flex;align-items:center;gap:7px;
-  }
-  .basket-view:hover{background:var(--surface-3);border-color:var(--border-strong)}
-  .basket-checkout{
-    padding:11px 20px;border-radius:10px;font-size:15px;color:#fff;font-weight:700;
-    background:linear-gradient(135deg,#229ED9,#1d8ec4);transition:.2s;
-    box-shadow:0 12px 28px -12px rgba(34,158,217,1);
+  .basket-open{
+    padding:11px 22px;border-radius:10px;font-size:15px;color:#fff;font-weight:700;
+    background:linear-gradient(135deg,var(--accent),var(--accent-2));transition:.18s;
     display:inline-flex;align-items:center;gap:8px;
   }
-  .basket-checkout:hover{filter:brightness(1.1);transform:translateY(-1px)}
+  .basket-open:hover{filter:brightness(1.1)}
 
-  /* ---------- Toast ---------- */
+  /* Toast */
   .toast-stack{
     position:fixed;bottom:90px;left:50%;transform:translateX(-50%);z-index:200;
     display:flex;flex-direction:column;gap:9px;align-items:center;
@@ -518,20 +476,18 @@
   .toast-stack.raised{bottom:130px}
   .toast{
     padding:11px 18px;border-radius:11px;font-size:14.5px;
-    background:rgba(26,26,41,.97);border:1px solid var(--border-strong);
-    box-shadow:0 18px 44px -14px rgba(0,0,0,.95);
+    background:rgba(26,26,41,.98);border:1px solid var(--border-strong);
     display:flex;align-items:center;gap:9px;
-    animation:toastIn .35s cubic-bezier(.2,.9,.3,1);
-    backdrop-filter:blur(12px);
+    animation:toastIn .3s cubic-bezier(.2,.9,.3,1);
   }
   .toast .ic{font-size:16px;color:#a78bfa}
   .toast.ok .ic{color:#22c55e}
   .toast.warn .ic{color:#fb923c}
-  @keyframes toastIn{from{opacity:0;transform:translateY(14px) scale(.95)}to{opacity:1;transform:none}}
-  .toast.out{animation:toastOut .3s forwards}
-  @keyframes toastOut{to{opacity:0;transform:translateY(-8px) scale(.96)}}
+  @keyframes toastIn{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:none}}
+  .toast.out{animation:toastOut .25s forwards}
+  @keyframes toastOut{to{opacity:0;transform:translateY(-6px)}}
 
-  /* ---------- Footer ---------- */
+  /* Footer */
   footer{border-top:1px solid var(--border);background:var(--surface);padding:40px 22px 30px;margin-top:auto}
   .foot-inner{max-width:1360px;margin:0 auto;display:flex;flex-wrap:wrap;gap:28px;justify-content:space-between;align-items:flex-start}
   .foot-brand{max-width:300px}
@@ -545,9 +501,7 @@
     font-size:13.5px;color:#6c6c85;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px;
   }
 
-  /* =========================================================
-     RESPONSIVE
-     ========================================================= */
+  /* Responsive */
   @media (max-width:1024px){
     .header-search{max-width:230px}
     nav.main-nav button{padding:8px 10px;font-size:14.5px}
@@ -562,23 +516,20 @@
     .logo span{display:none}
     .cart-btn .lbl{display:none}
     .cart-btn{padding:9px 11px}
-    .hero{padding:44px 14px 34px}
+    .hero{padding:40px 14px 30px}
     .hero-badge{font-size:13px;padding:4px 12px}
-    .hero p{margin-bottom:24px}
+    .hero p{margin-bottom:22px}
     .hero-cta{flex-direction:column;align-items:stretch;gap:0;padding:8px;border-radius:14px;max-width:100%}
     .cta-field{padding:11px 10px;border-bottom:1px solid var(--border)}
     .search-go{width:100%;justify-content:center;padding:13px}
-
     .cats{padding:0 14px 6px;gap:7px}
     .cat{padding:8px 13px;font-size:14px}
-
     .toolbar{padding:0 14px;margin-top:20px;gap:9px}
     .toolbar h2{font-size:18px}
     .result-count{font-size:13.5px;width:100%}
     .toolbar .spacer{display:none}
     .sort-wrap{width:100%}
     .sort-wrap select{width:100%}
-
     .grid{padding:16px 14px 140px;gap:12px;grid-template-columns:repeat(2,1fr)}
     .card-body{padding:10px 11px 11px;gap:4px}
     .card-body h3{font-size:14.5px;min-height:38px}
@@ -594,7 +545,6 @@
     .price strong{font-size:15.5px}
     .btn-buy{padding:7px 9px;font-size:13px;gap:4px}
     .btn-buy .ic{font-size:13px}
-
     .modal-wrap{padding:0;align-items:flex-end}
     .modal{max-height:94vh;border-radius:18px 18px 0 0;max-width:100%}
     .modal-hero{padding:22px 18px 20px;min-height:170px}
@@ -612,21 +562,16 @@
     .stepper .qty{width:22px;font-size:14px}
     .live-total{padding:12px 13px;margin-top:14px}
     .live-total .lt-value{font-size:20px}
-
     .drawer{width:100%}
     .foot-cols{gap:30px}
     .foot-bottom{font-size:12.5px}
-
     .basket-bar{padding:9px 14px calc(9px + env(safe-area-inset-bottom))}
     .basket-inner{gap:11px}
     .basket-icon{width:38px;height:38px;font-size:17px;border-radius:10px}
     .basket-total{font-size:19px}
     .basket-count{font-size:11.5px}
     .basket-items{display:none}
-    .basket-view{padding:10px 12px;font-size:14px}
-    .basket-view span.lbl{display:none}
-    .basket-checkout{padding:10px 14px;font-size:14.5px;gap:6px}
-    .basket-checkout span.lbl-full{display:none}
+    .basket-open{padding:10px 16px;font-size:14.5px;gap:6px}
     .toast-stack{bottom:80px}
     .toast-stack.raised{bottom:110px}
   }
@@ -635,14 +580,10 @@
     .card-body h3{font-size:16px;min-height:0}
     .meta-grid{grid-template-columns:1fr}
   }
-  @media (min-width:1600px){
-    .grid{grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:24px}
-  }
 </style>
 </head>
 <body>
 
-<!-- ================= HEADER ================= -->
 <header>
   <div class="header-inner">
     <div class="logo">
@@ -666,7 +607,7 @@
       <input type="text" id="headerSearch" placeholder="Search events, artists, venues" autocomplete="off">
     </div>
     <button class="cart-btn" id="cartBtn">
-      <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/><path d="M2.8 3.5h2.3l2.4 11.6a1.7 1.7 0 0 0 1.7 1.4h8.5a1.7 1.7 0 0 0 1.7-1.35L21.2 7.2H6"/></svg>
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/><path d="M2.8 3.5h2.3l2.4 11.6a1.7 1.7 0 0 0 1.7 1.4h8.5a1.7 1.7 0 0 0 1.7-1.35L21.2 7.2H6"/></svg>
       <span class="lbl">Basket</span>
       <span class="cart-count" id="cartCount">0</span>
     </button>
@@ -674,63 +615,37 @@
 </header>
 
 <div class="tg-banner">
-  <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="color:#7dd3fc"><path d="M21.6 3.4 2.9 10.5a.6.6 0 0 0 .03 1.13l4.6 1.5 1.75 5.2a.6.6 0 0 0 1.02.2l2.5-2.7 4.6 3.4a.6.6 0 0 0 .95-.33L22.6 4.3a.6.6 0 0 0-1-.9Z"/></svg>
-  <span>All orders are finalised on Telegram —</span>
+  <span>Checkout is completed inside your Basket —</span>
   <span class="tg-handle">@skywacher126</span>
-  <span>Checkout sends your basket automatically.</span>
 </div>
 
-<!-- ================= HERO ================= -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-badge"><span class="dot"></span> Live now &middot; LA &amp; Orange County October lineup</div>
     <h1>Your next great <em>night out</em><br>starts right here.</h1>
     <p>Concerts, championship games, Broadway shows and festivals — real seats, transparent pricing, no hidden surprises.</p>
-
     <div class="hero-cta">
       <div class="cta-field">
-        <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.8-6-6.8-10.8a6.8 6.8 0 1 1 13.6 0C18.8 15 12 21 12 21Z"/><circle cx="12" cy="10.2" r="2.6"/></svg>
-        <select id="cityFilter">
-          <option value="all">All locations</option>
-        </select>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.8-6-6.8-10.8a6.8 6.8 0 1 1 13.6 0C18.8 15 12 21 12 21Z"/><circle cx="12" cy="10.2" r="2.6"/></svg>
+        <select id="cityFilter"><option value="all">All locations</option></select>
       </div>
       <button class="search-go" id="heroGo">
-        <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/><path d="M14.5 7v10" stroke-dasharray="2 2"/></svg>
+        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/><path d="M14.5 7v10" stroke-dasharray="2 2"/></svg>
         Find Tickets
       </button>
     </div>
   </div>
 </section>
 
-<!-- ================= CATEGORIES ================= -->
 <div class="cats" id="catStrip">
-  <button class="cat active" data-cat="all">
-    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 13.7 8.3 18.5 10 13.7 11.7 12 16.5 10.3 11.7 5.5 10 10.3 8.3Z"/><path d="M18.5 15.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7Z"/></svg>
-    All Events
-  </button>
-  <button class="cat" data-cat="concert">
-    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5.5l10-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>
-    Concerts
-  </button>
-  <button class="cat" data-cat="sports">
-    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v4.5a5 5 0 0 1-10 0Z"/><path d="M7 5.5H4.5V7a3.5 3.5 0 0 0 3.5 3.5M17 5.5h2.5V7a3.5 3.5 0 0 1-3.5 3.5"/><path d="M12 13.5V17M9 20.5h6M10 17h4l.6 3.5H9.4Z"/></svg>
-    Sports
-  </button>
-  <button class="cat" data-cat="theater">
-    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 4.5h8v5a4 4 0 0 1-8 0Z"/><path d="M12.5 8.5h8v5a4 4 0 0 1-8 0Z"/><path d="M5.5 8.5a1.6 1.6 0 0 0 3.2 0M14.5 12.5a1.6 1.6 0 0 0 3.2 0"/></svg>
-    Theater &amp; Arts
-  </button>
-  <button class="cat" data-cat="comedy">
-    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M8.5 21h7"/></svg>
-    Comedy
-  </button>
-  <button class="cat" data-cat="festival">
-    <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 3 20h18Z"/><path d="M12 3.5V20M8.5 20 12 13l3.5 7"/></svg>
-    Festivals
-  </button>
+  <button class="cat active" data-cat="all"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 13.7 8.3 18.5 10 13.7 11.7 12 16.5 10.3 11.7 5.5 10 10.3 8.3Z"/></svg>All Events</button>
+  <button class="cat" data-cat="concert"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18V5.5l10-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/></svg>Concerts</button>
+  <button class="cat" data-cat="sports"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 4h10v4.5a5 5 0 0 1-10 0Z"/><path d="M7 5.5H4.5V7a3.5 3.5 0 0 0 3.5 3.5M17 5.5h2.5V7a3.5 3.5 0 0 1-3.5 3.5"/><path d="M12 13.5V17M9 20.5h6"/></svg>Sports</button>
+  <button class="cat" data-cat="theater"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 4.5h8v5a4 4 0 0 1-8 0Z"/><path d="M12.5 8.5h8v5a4 4 0 0 1-8 0Z"/></svg>Theater &amp; Arts</button>
+  <button class="cat" data-cat="comedy"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/></svg>Comedy</button>
+  <button class="cat" data-cat="festival"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5 3 20h18Z"/><path d="M12 3.5V20"/></svg>Festivals</button>
 </div>
 
-<!-- ================= TOOLBAR ================= -->
 <div class="toolbar">
   <h2 id="sectionTitle">All Events</h2>
   <span class="result-count" id="resultCount"></span>
@@ -745,20 +660,18 @@
   </div>
 </div>
 
-<!-- ================= GRID ================= -->
 <main class="grid" id="eventGrid"></main>
 
-<!-- ================= FOOTER ================= -->
 <footer>
   <div class="foot-inner">
     <div class="foot-brand">
       <div class="logo">
         <div class="logo-mark">
-          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/><path d="M14.5 7v10" stroke-dasharray="2 2"/></svg>
+          <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/></svg>
         </div>
         <span>TixNest</span>
       </div>
-      <p>The simplest way to find and buy tickets for the events you love. Every order is confirmed personally on Telegram <b style="color:#7dd3fc">@skywacher126</b>.</p>
+      <p>The simplest way to find and buy tickets for the events you love. Basket checkout is confirmed on Telegram <b style="color:#7dd3fc">@skywacher126</b>.</p>
     </div>
     <div class="foot-cols">
       <div class="foot-col">
@@ -786,37 +699,34 @@
   </div>
   <div class="foot-bottom">
     <span>© 2026 TixNest Inc. All rights reserved.</span>
-    <span>Order details are sent to Telegram for confirmation.</span>
+    <span>Basket order details are sent to Telegram for confirmation.</span>
   </div>
 </footer>
 
-<!-- ================= EVENT MODAL ================= -->
 <div class="modal-wrap" id="eventModal">
   <div class="modal" id="eventModalContent"></div>
 </div>
 
-<!-- ================= CART DRAWER ================= -->
 <div class="backdrop" id="drawerBackdrop"></div>
 <aside class="drawer" id="cartDrawer">
   <div class="drawer-head">
     <h3>
-      <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/><path d="M2.8 3.5h2.3l2.4 11.6a1.7 1.7 0 0 0 1.7 1.4h8.5a1.7 1.7 0 0 0 1.7-1.35L21.2 7.2H6"/></svg>
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/><path d="M2.8 3.5h2.3l2.4 11.6a1.7 1.7 0 0 0 1.7 1.4h8.5a1.7 1.7 0 0 0 1.7-1.35L21.2 7.2H6"/></svg>
       Your Basket
       <span class="pill" id="drawerCount">0 tickets</span>
     </h3>
     <button class="icon-btn" id="closeDrawer" aria-label="Close basket">
-      <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/></svg>
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/></svg>
     </button>
   </div>
   <div class="drawer-body" id="cartItems"></div>
   <div class="drawer-foot" id="cartFoot"></div>
 </aside>
 
-<!-- ================= STICKY BASKET BAR ================= -->
 <div class="basket-bar" id="basketBar">
   <div class="basket-inner">
     <div class="basket-icon">
-      <svg class="ic ic-lg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/><path d="M2.8 3.5h2.3l2.4 11.6a1.7 1.7 0 0 0 1.7 1.4h8.5a1.7 1.7 0 0 0 1.7-1.35L21.2 7.2H6"/></svg>
+      <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/><path d="M2.8 3.5h2.3l2.4 11.6a1.7 1.7 0 0 0 1.7 1.4h8.5a1.7 1.7 0 0 0 1.7-1.35L21.2 7.2H6"/></svg>
       <span class="bubble" id="basketBubble">0</span>
     </div>
     <div class="basket-summary">
@@ -825,13 +735,9 @@
       <div class="basket-items" id="basketItems"></div>
     </div>
     <div class="basket-actions">
-      <button class="basket-view" id="basketViewBtn">
+      <button class="basket-open" id="basketOpenBtn">
         <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/></svg>
-        <span class="lbl">View Basket</span>
-      </button>
-      <button class="basket-checkout" id="basketCheckoutBtn">
-        <svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21.6 3.4 2.9 10.5a.6.6 0 0 0 .03 1.13l4.6 1.5 1.75 5.2a.6.6 0 0 0 1.02.2l2.5-2.7 4.6 3.4a.6.6 0 0 0 .95-.33L22.6 4.3a.6.6 0 0 0-1-.9Z"/></svg>
-        <span class="lbl-full">Checkout on </span>Telegram
+        <span>Open Basket</span>
       </button>
     </div>
   </div>
@@ -841,604 +747,369 @@
 
 <script>
 /* =========================================================
-   CONFIG
+   CONFIG — only basket checkout uses this
    ========================================================= */
-const TELEGRAM_USER = 'skywacher126';
-const TELEGRAM_URL  = 'https://t.me/' + TELEGRAM_USER;
+const TG_USER = 'skywacher126';
+const TG_URL  = 'https://t.me/' + TG_USER;
 
 /* =========================================================
    ICON PATHS
    ========================================================= */
 const ICON_PATHS = {
-  ticket:'<path d="M4 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/><path d="M14.5 7v10" stroke-dasharray="2 2"/>',
+  ticket:'<path d="M4 9a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.2a2.3 2.3 0 0 0 0 4.6V16a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-1.2a2.3 2.3 0 0 0 0-4.6Z"/>',
   music:'<path d="M9 18V5.5l10-2V16"/><circle cx="6.5" cy="18" r="2.5"/><circle cx="16.5" cy="16" r="2.5"/>',
-  trophy:'<path d="M7 4h10v4.5a5 5 0 0 1-10 0Z"/><path d="M7 5.5H4.5V7a3.5 3.5 0 0 0 3.5 3.5M17 5.5h2.5V7a3.5 3.5 0 0 1-3.5 3.5"/><path d="M12 13.5V17M9 20.5h6M10 17h4l.6 3.5H9.4Z"/>',
-  theater:'<path d="M3.5 4.5h8v5a4 4 0 0 1-8 0Z"/><path d="M12.5 8.5h8v5a4 4 0 0 1-8 0Z"/><path d="M5.5 8.5a1.6 1.6 0 0 0 3.2 0M14.5 12.5a1.6 1.6 0 0 0 3.2 0"/>',
-  mic:'<rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3M8.5 21h7"/>',
-  tent:'<path d="M12 3.5 3 20h18Z"/><path d="M12 3.5V20M8.5 20 12 13l3.5 7"/>',
-  sparkles:'<path d="M12 3.5 13.7 8.3 18.5 10 13.7 11.7 12 16.5 10.3 11.7 5.5 10 10.3 8.3Z"/><path d="M18.5 15.5l.7 2 2 .7-2 .7-.7 2-.7-2-2-.7 2-.7Z"/>',
+  trophy:'<path d="M7 4h10v4.5a5 5 0 0 1-10 0Z"/><path d="M7 5.5H4.5V7a3.5 3.5 0 0 0 3.5 3.5M17 5.5h2.5V7a3.5 3.5 0 0 1-3.5 3.5"/><path d="M12 13.5V17M9 20.5h6"/>',
+  theater:'<path d="M3.5 4.5h8v5a4 4 0 0 1-8 0Z"/><path d="M12.5 8.5h8v5a4 4 0 0 1-8 0Z"/>',
+  mic:'<rect x="9" y="2.5" width="6" height="11" rx="3"/><path d="M5.5 11.5a6.5 6.5 0 0 0 13 0M12 18v3"/>',
+  tent:'<path d="M12 3.5 3 20h18Z"/><path d="M12 3.5V20"/>',
+  sparkles:'<path d="M12 3.5 13.7 8.3 18.5 10 13.7 11.7 12 16.5 10.3 11.7 5.5 10 10.3 8.3Z"/>',
   bolt:'<path d="M13.5 2.5 5 13.5h5.5L9.5 21.5 19 10.5h-5.8Z"/>',
   pin:'<path d="M12 21s-6.8-6-6.8-10.8a6.8 6.8 0 1 1 13.6 0C18.8 15 12 21 12 21Z"/><circle cx="12" cy="10.2" r="2.6"/>',
   calendar:'<rect x="3.5" y="5" width="17" height="15.5" rx="2"/><path d="M3.5 10h17M8 3.5v3M16 3.5v3"/>',
-  clock:'<circle cx="12" cy="12" r="8.5"/><path d="M12 7.5V12l3 1.8"/>',
-  seats:'<path d="M15.5 20v-1.4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4V20"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="M17 13.6a4 4 0 0 1 3.5 4V20"/><path d="M16 4.3a3.5 3.5 0 0 1 0 6.4"/>',
+  seats:'<path d="M15.5 20v-1.4a4 4 0 0 0-4-4h-4a4 4 0 0 0-4 4V20"/><circle cx="9.5" cy="7.5" r="3.5"/><path d="M17 13.6a4 4 0 0 1 3.5 4V20"/>',
   cart:'<circle cx="9.5" cy="20" r="1.3"/><circle cx="17.5" cy="20" r="1.3"/><path d="M2.8 3.5h2.3l2.4 11.6a1.7 1.7 0 0 0 1.7 1.4h8.5a1.7 1.7 0 0 0 1.7-1.35L21.2 7.2H6"/>',
   search:'<circle cx="11" cy="11" r="6.8"/><path d="m20 20-3.7-3.7"/>',
   close:'<path d="M6.5 6.5 17.5 17.5M17.5 6.5 6.5 17.5"/>',
   check:'<path d="m5 12.5 4.6 4.6L19 7"/>',
   send:'<path d="M21.6 3.4 2.9 10.5a.6.6 0 0 0 .03 1.13l4.6 1.5 1.75 5.2a.6.6 0 0 0 1.02.2l2.5-2.7 4.6 3.4a.6.6 0 0 0 .95-.33L22.6 4.3a.6.6 0 0 0-1-.9Z"/>',
   trash:'<path d="M4 6.5h16M9.5 6.5V4.8A1.3 1.3 0 0 1 10.8 3.5h2.4a1.3 1.3 0 0 1 1.3 1.3v1.7"/><path d="M6.5 6.5 7.6 19.4a1.8 1.8 0 0 0 1.8 1.6h5.2a1.8 1.8 0 0 0 1.8-1.6L17.5 6.5"/>',
-  eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>',
-  tag:'<path d="M3.5 12.2V5.5a2 2 0 0 1 2-2h6.7a2 2 0 0 1 1.4.6l7 7a2 2 0 0 1 0 2.8l-6.7 6.7a2 2 0 0 1-2.8 0l-7-7a2 2 0 0 1-.6-1.4Z"/><circle cx="8" cy="8" r="1.4"/>',
-  warn:'<path d="M12 4 2.8 20h18.4Z"/><path d="M12 10v4M12 17h.01"/>'
+  eye:'<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z"/><circle cx="12" cy="12" r="3"/>'
 };
 
-function ic(name, extra){
-  return '<svg class="ic ' + (extra || '') + '" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+function ic(name){
+  return '<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" '
        + 'stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">'
        + (ICON_PATHS[name] || '') + '</svg>';
 }
 
-/* =========================================================
-   CATEGORY META
-   ========================================================= */
 const CATEGORY_META = {
   sports:   { label:'Sports',   icon:'trophy' },
   concert:  { label:'Concert',  icon:'music' },
   theater:  { label:'Theater',  icon:'theater' },
   comedy:   { label:'Comedy',   icon:'mic' },
-  festival: { label:'Festival', icon:'tent' },
+  festival: { label:'Festival', icon:'tent' }
 };
 
 /* =========================================================
-   GENERATED POSTER ARTWORK
+   SIMPLIFIED ARTWORK (cached per event)
    ========================================================= */
-let artSeq = 0;
+const posterCache = new Map();
 
-function artGrowlers(uid){
-  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="grSky${uid}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#241b4e"/>
-        <stop offset="36%" stop-color="#7c2d12"/>
-        <stop offset="70%" stop-color="#ea580c"/>
-        <stop offset="100%" stop-color="#fcd34d"/>
-      </linearGradient>
-      <clipPath id="grSun${uid}"><circle cx="200" cy="166" r="76"/></clipPath>
-    </defs>
-    <rect width="400" height="300" fill="url(#grSky${uid})"/>
-    <circle cx="200" cy="166" r="76" fill="#fef9c3"/>
-    <g clip-path="url(#grSun${uid})" fill="#ea580c">
-      <rect x="110" y="136" width="180" height="8"/>
-      <rect x="110" y="155" width="180" height="12"/>
-      <rect x="110" y="178" width="180" height="16"/>
-      <rect x="110" y="205" width="180" height="20"/>
-    </g>
-    <path d="M0 234 L58 198 L112 228 L168 188 L222 226 L278 194 L336 230 L400 202 L400 300 L0 300 Z" fill="#4c1d95" opacity="0.92"/>
-    <path d="M0 256 L72 228 L134 254 L204 222 L268 252 L334 226 L400 254 L400 300 L0 300 Z" fill="#1e1b4b"/>
-    <g stroke="#0f0a1e" stroke-width="4.5" fill="none" stroke-linecap="round">
-      <path d="M50 270 L55 212"/>
-      <path d="M55 212 C37 201 24 203 13 214"/>
-      <path d="M55 212 C42 194 31 190 18 193"/>
-      <path d="M55 212 C69 197 82 195 95 202"/>
-      <path d="M55 212 C70 201 85 203 96 214"/>
-      <path d="M352 270 L347 216"/>
-      <path d="M347 216 C329 205 316 207 305 218"/>
-      <path d="M347 216 C334 198 323 194 310 197"/>
-      <path d="M347 216 C361 201 374 199 387 206"/>
-      <path d="M347 216 C362 205 377 207 388 218"/>
-    </g>
-    <g stroke="#1e1b4b" stroke-width="1.8" fill="none" opacity="0.85">
-      <path d="M112 74 q8 -7 16 0 q8 -7 16 0"/>
-      <path d="M262 56 q7 -6 14 0 q7 -6 14 0"/>
-    </g>
-  </svg>`;
-}
-
-function artGlitch(uid){
-  const slices = [
-    [66,16,0],[86,14,14],[102,18,-10],[122,12,8],[136,20,-16],
-    [158,14,6],[174,18,-8],[194,14,12],[210,16,-6]
-  ];
-  const head   = slices.map(s=>`<rect x="${168+s[2]}" y="${s[0]}" width="64" height="${s[1]}" fill="#f8fafc" opacity="0.94"/>`).join('');
-  const ghostR = slices.map(s=>`<rect x="${160+s[2]}" y="${s[0]}" width="64" height="${s[1]}" fill="#ef4444" opacity="0.7"/>`).join('');
-  const ghostC = slices.map(s=>`<rect x="${176+s[2]}" y="${s[0]}" width="64" height="${s[1]}" fill="#22d3ee" opacity="0.6"/>`).join('');
-  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <pattern id="scan${uid}" width="3" height="3" patternUnits="userSpaceOnUse">
-        <rect width="3" height="1.4" fill="#ffffff" opacity="0.055"/>
-      </pattern>
-      <linearGradient id="bgG${uid}" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="#1b1b22"/>
-        <stop offset="100%" stop-color="#07070a"/>
-      </linearGradient>
-    </defs>
-    <rect width="400" height="300" fill="url(#bgG${uid})"/>
-    <g opacity="0.85">
-      <rect x="0"  y="30"  width="400" height="5"  fill="#ef4444" opacity="0.55"/>
-      <rect x="0"  y="118" width="400" height="4"  fill="#22d3ee" opacity="0.5"/>
-      <rect x="0"  y="240" width="400" height="6"  fill="#ef4444" opacity="0.45"/>
-    </g>
-    ${ghostR}
-    ${ghostC}
-    ${head}
-    <path d="M148 244 L252 244 L272 300 L128 300 Z" fill="#f8fafc" opacity="0.16"/>
-    <g stroke="#f8fafc" stroke-width="2" opacity="0.55" fill="none">
-      <path d="M40 60 L96 60"/><path d="M40 72 L78 72"/>
-      <path d="M312 96 L360 96"/><path d="M330 108 L360 108"/>
-      <path d="M46 200 L104 200"/>
-      <path d="M300 208 L356 208"/>
-    </g>
-    <g fill="#ef4444" opacity="0.85">
-      <rect x="36" y="150" width="46" height="10"/>
-      <rect x="318" y="168" width="46" height="10"/>
-    </g>
-    <rect width="400" height="300" fill="url(#scan${uid})"/>
-  </svg>`;
-}
-
-function artLuxury(uid){
-  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <radialGradient id="ytGlow${uid}" cx="50%" cy="40%" r="66%">
-        <stop offset="0%" stop-color="#dc2626"/>
-        <stop offset="52%" stop-color="#7f1d1d"/>
-        <stop offset="100%" stop-color="#0b0b0d"/>
-      </radialGradient>
-    </defs>
-    <rect width="400" height="300" fill="url(#ytGlow${uid})"/>
-    <g fill="none" stroke="#fbbf24" stroke-width="1.7" opacity="0.8">
-      <path d="M200 42 L262 116 L200 190 L138 116 Z"/>
-      <path d="M200 70 L240 116 L200 162 L160 116 Z"/>
-      <path d="M200 94 L220 116 L200 138 L180 116 Z"/>
-    </g>
-    <g fill="#fbbf24"><circle cx="200" cy="116" r="4.5"/></g>
-    <g fill="#ffffff" opacity="0.75">
-      <circle cx="86" cy="66" r="2"/><circle cx="322" cy="88" r="2.4"/>
-      <circle cx="68" cy="218" r="1.8"/><circle cx="334" cy="232" r="2"/>
-      <circle cx="150" cy="40" r="1.6"/><circle cx="272" cy="196" r="1.7"/>
-    </g>
-    <g stroke="#fbbf24" stroke-width="2" fill="none" opacity="0.45">
-      <path d="M112 254 Q200 296 288 254"/>
-      <path d="M132 268 Q200 302 268 268"/>
-      <path d="M92 240 Q200 288 308 240"/>
-    </g>
-    <g opacity="0.28">
-      <rect x="0" y="0" width="400" height="14" fill="#000"/>
-      <rect x="0" y="286" width="400" height="14" fill="#000"/>
-    </g>
-  </svg>`;
-}
-
-function artDeco(uid){
-  let rays = '';
-  for (let i = 0; i <= 22; i++){
-    const ang = -Math.PI + (i / 22) * Math.PI;
-    const x = 200 + Math.cos(ang) * 340;
-    const y = 264 + Math.sin(ang) * 340;
-    rays += `<line x1="200" y1="264" x2="${x.toFixed(1)}" y2="${y.toFixed(1)}" stroke="#f59e0b" stroke-width="1.1" opacity="0.28"/>`;
+function buildArt(e, u){
+  const t = e.art;
+  if (t === 'growlers'){
+    return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="g${u}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#241b4e"/><stop offset=".55" stop-color="#c2410c"/><stop offset="1" stop-color="#fcd34d"/>
+      </linearGradient></defs>
+      <rect width="400" height="300" fill="url(#g${u})"/>
+      <circle cx="200" cy="176" r="66" fill="#fef9c3"/>
+      <g fill="#ea580c"><rect x="134" y="158" width="132" height="7"/><rect x="134" y="176" width="132" height="11"/><rect x="134" y="198" width="132" height="15"/></g>
+      <path d="M0 244 L90 212 L180 240 L270 208 L400 238 L400 300 L0 300Z" fill="#4c1d95"/>
+      <path d="M0 268 L110 244 L220 266 L330 242 L400 262 L400 300 L0 300Z" fill="#1e1b4b"/>
+    </svg>`;
   }
-  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="deBg${uid}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#1c1030"/>
-        <stop offset="55%" stop-color="#4a1d1d"/>
-        <stop offset="100%" stop-color="#78350f"/>
-      </linearGradient>
-    </defs>
-    <rect width="400" height="300" fill="url(#deBg${uid})"/>
-    ${rays}
-    <circle cx="200" cy="264" r="46" fill="#fbbf24" opacity="0.9"/>
-    <circle cx="200" cy="264" r="46" fill="none" stroke="#fde68a" stroke-width="2"/>
-    <g fill="none" stroke="#fcd34d" stroke-width="2.2" opacity="0.85">
-      <path d="M112 264 L112 176 A88 88 0 0 1 288 176 L288 264"/>
-      <path d="M140 264 L140 190 A60 60 0 0 1 260 190 L260 264"/>
-      <path d="M168 264 L168 206 A32 32 0 0 1 232 206 L232 264"/>
-    </g>
-    <g fill="none" stroke="#fcd34d" stroke-width="1.4" opacity="0.45">
-      <path d="M88 264 L88 160 A112 112 0 0 1 312 160 L312 264"/>
-    </g>
-    <g fill="#fbbf24" opacity="0.85">
-      <circle cx="200" cy="150" r="3"/>
-      <circle cx="152" cy="164" r="2"/>
-      <circle cx="248" cy="164" r="2"/>
-    </g>
-    <rect x="0" y="264" width="400" height="36" fill="#12061f" opacity="0.85"/>
-    <g fill="#fbbf24" opacity="0.6">
-      <rect x="20" y="274" width="360" height="2"/>
-      <rect x="20" y="282" width="360" height="1.2"/>
-    </g>
-  </svg>`;
-}
-
-function artCountry(uid){
-  const beams = [
-    [30,300,150,0],[370,300,250,0],[80,300,200,0],[320,300,100,0]
-  ].map((b,i)=>`<path d="M${b[0]} ${b[1]} L${b[2]} ${b[3]} L${b[2]+40} ${b[3]}" fill="#fbbf24" opacity="${0.10 + i*0.02}"/>`).join('');
-  let wheat = '';
-  for (let i = 0; i < 14; i++){
-    const x = 12 + i * 29;
-    wheat += `<path d="M${x} 300 Q${x+5} 268 ${x} 244" stroke="#ca8a04" stroke-width="2" fill="none" opacity="0.55"/>`;
-    wheat += `<ellipse cx="${x}" cy="246" rx="4" ry="9" fill="#facc15" opacity="0.6"/>`;
+  if (t === 'glitch'){
+    const s = [[70,18,0],[100,16,10],[130,20,-8],[160,14,6],[190,18,-4]];
+    const head = s.map(x=>`<rect x="${170+x[2]}" y="${x[0]}" width="60" height="${x[1]}" fill="#f8fafc" opacity=".95"/>`).join('');
+    const r = s.map(x=>`<rect x="${162+x[2]}" y="${x[0]}" width="60" height="${x[1]}" fill="#ef4444" opacity=".7"/>`).join('');
+    const c = s.map(x=>`<rect x="${178+x[2]}" y="${x[0]}" width="60" height="${x[1]}" fill="#22d3ee" opacity=".6"/>`).join('');
+    return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <rect width="400" height="300" fill="#111116"/>
+      <rect y="30" width="400" height="4" fill="#ef4444" opacity=".6"/>
+      <rect y="120" width="400" height="3" fill="#22d3ee" opacity=".5"/>
+      <rect y="240" width="400" height="4" fill="#ef4444" opacity=".5"/>
+      ${r}${c}${head}
+      <rect x="30" y="150" width="40" height="8" fill="#ef4444" opacity=".85"/>
+      <rect x="330" y="170" width="40" height="8" fill="#ef4444" opacity=".85"/>
+    </svg>`;
   }
-  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="ctSky${uid}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0b1220"/>
-        <stop offset="52%" stop-color="#3b1d52"/>
-        <stop offset="100%" stop-color="#7c2d12"/>
-      </linearGradient>
-      <radialGradient id="ctGlow${uid}" cx="50%" cy="52%" r="40%">
-        <stop offset="0%" stop-color="#fbbf24" stop-opacity="0.55"/>
-        <stop offset="100%" stop-color="#fbbf24" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <rect width="400" height="300" fill="url(#ctSky${uid})"/>
-    ${beams}
-    <ellipse cx="200" cy="180" rx="150" ry="90" fill="url(#ctGlow${uid})"/>
-    <g fill="#ffffff" opacity="0.55">
-      <circle cx="60" cy="46" r="1.3"/><circle cx="128" cy="30" r="1"/>
-      <circle cx="250" cy="40" r="1.2"/><circle cx="332" cy="60" r="1"/>
-      <circle cx="300" cy="22" r="1.1"/><circle cx="176" cy="58" r="0.9"/>
-    </g>
-    <g transform="translate(200,186)">
-      <ellipse cx="0" cy="16" rx="84" ry="15" fill="#08080f"/>
-      <ellipse cx="0" cy="12" rx="84" ry="15" fill="#12061f"/>
-      <path d="M-42 12 Q-44 -34 0 -40 Q44 -34 42 12 Z" fill="#12061f"/>
-      <path d="M-42 6 Q0 18 42 6 L42 12 Q0 24 -42 12 Z" fill="#fbbf24" opacity="0.75"/>
-    </g>
-    <rect x="0" y="262" width="400" height="38" fill="#120a04" opacity="0.9"/>
-    ${wheat}
-  </svg>`;
-}
-
-function artStadium(uid){
-  let yards = '';
-  for (let i = 0; i <= 11; i++){
-    const x = 40 + i * 29;
-    yards += `<line x1="${x}" y1="172" x2="${x}" y2="288" stroke="#ffffff" stroke-width="1.4" opacity="0.28"/>`;
-  }
-  return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="scSky${uid}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#0b1220"/>
-        <stop offset="100%" stop-color="#4c0519"/>
-      </linearGradient>
-      <linearGradient id="scField${uid}" x1="0" y1="0" x2="0" y2="1">
-        <stop offset="0%" stop-color="#15803d"/>
-        <stop offset="100%" stop-color="#052e16"/>
-      </linearGradient>
-      <radialGradient id="scLight${uid}" cx="50%" cy="0%" r="60%">
-        <stop offset="0%" stop-color="#fef9c3" stop-opacity="0.35"/>
-        <stop offset="100%" stop-color="#fef9c3" stop-opacity="0"/>
-      </radialGradient>
-    </defs>
-    <rect width="400" height="300" fill="url(#scSky${uid})"/>
-    <g fill="#fef9c3" opacity="0.9">
-      <circle cx="58" cy="34" r="4.5"/><circle cx="342" cy="34" r="4.5"/>
-    </g>
-    <g fill="#fef9c3" opacity="0.14">
-      <circle cx="58" cy="34" r="32"/><circle cx="342" cy="34" r="32"/>
-    </g>
-    <rect width="400" height="230" fill="url(#scLight${uid})"/>
-    <ellipse cx="200" cy="204" rx="238" ry="98" fill="#7f1d1d" opacity="0.6"/>
-    <ellipse cx="200" cy="204" rx="196" ry="78" fill="#0f172a" opacity="0.75"/>
-    <ellipse cx="200" cy="208" rx="160" ry="64" fill="#a16207" opacity="0.35"/>
-    <rect x="28" y="172" width="344" height="118" rx="5" fill="url(#scField${uid})"/>
-    ${yards}
-    <rect x="28" y="172" width="26" height="118" fill="#991b1b" opacity="0.9"/>
-    <rect x="346" y="172" width="26" height="118" fill="#facc15" opacity="0.85"/>
-    <g stroke="#ffffff" stroke-width="1.6" opacity="0.4">
-      <line x1="28" y1="172" x2="372" y2="172"/>
-      <line x1="28" y1="290" x2="372" y2="290"/>
-    </g>
-    <g transform="translate(200,232)">
-      <ellipse cx="0" cy="0" rx="34" ry="21" fill="#7c2d12" stroke="#ffffff" stroke-width="2.4"/>
-      <line x1="-12" y1="0" x2="12" y2="0" stroke="#ffffff" stroke-width="2.4"/>
-      <g stroke="#ffffff" stroke-width="2">
-        <line x1="-6" y1="-5" x2="-6" y2="5"/>
-        <line x1="0" y1="-6" x2="0" y2="6"/>
-        <line x1="6" y1="-5" x2="6" y2="5"/>
+  if (t === 'luxury'){
+    return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs><radialGradient id="g${u}" cx="50%" cy="40%" r="65%">
+        <stop offset="0" stop-color="#dc2626"/><stop offset="1" stop-color="#0b0b0d"/>
+      </radialGradient></defs>
+      <rect width="400" height="300" fill="url(#g${u})"/>
+      <g fill="none" stroke="#fbbf24" stroke-width="2" opacity=".85">
+        <path d="M200 46 L258 116 L200 186 L142 116Z"/>
+        <path d="M200 82 L234 116 L200 150 L166 116Z"/>
       </g>
-    </g>
-  </svg>`;
-}
-
-function artGeneric(uid, e){
-  const path = ICON_PATHS[e.icon] || ICON_PATHS.ticket;
+      <circle cx="200" cy="116" r="4" fill="#fbbf24"/>
+      <g fill="#fff" opacity=".7"><circle cx="90" cy="70" r="2"/><circle cx="320" cy="90" r="2.2"/><circle cx="70" cy="220" r="1.8"/><circle cx="330" cy="230" r="2"/></g>
+    </svg>`;
+  }
+  if (t === 'deco'){
+    let rays = '';
+    for (let i = 0; i <= 11; i++){
+      const a = -Math.PI + (i/11)*Math.PI;
+      rays += `<line x1="200" y1="264" x2="${(200+Math.cos(a)*320).toFixed(0)}" y2="${(264+Math.sin(a)*320).toFixed(0)}" stroke="#f59e0b" stroke-width="1" opacity=".25"/>`;
+    }
+    return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="g${u}" x1="0" y1="0" x2="0" y2="1">
+        <stop offset="0" stop-color="#1c1030"/><stop offset="1" stop-color="#78350f"/>
+      </linearGradient></defs>
+      <rect width="400" height="300" fill="url(#g${u})"/>
+      ${rays}
+      <circle cx="200" cy="264" r="44" fill="#fbbf24" opacity=".9"/>
+      <g fill="none" stroke="#fcd34d" stroke-width="2" opacity=".8">
+        <path d="M116 264 V180 A84 84 0 0 1 284 180 V264"/>
+        <path d="M146 264 V196 A54 54 0 0 1 254 196 V264"/>
+      </g>
+      <rect y="264" width="400" height="36" fill="#12061f" opacity=".85"/>
+    </svg>`;
+  }
+  if (t === 'country'){
+    let wheat = '';
+    for (let i = 0; i < 8; i++){
+      const x = 24 + i*50;
+      wheat += `<path d="M${x} 300 Q${x+4} 272 ${x} 250" stroke="#ca8a04" stroke-width="2" fill="none" opacity=".6"/>`;
+    }
+    return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g${u}" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#7c2d12"/>
+        </linearGradient>
+        <radialGradient id="h${u}" cx="50%" cy="55%" r="40%">
+          <stop offset="0" stop-color="#fbbf24" stop-opacity=".5"/><stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#g${u})"/>
+      <ellipse cx="200" cy="180" rx="160" ry="90" fill="url(#h${u})"/>
+      <g transform="translate(200,190)">
+        <ellipse cx="0" cy="14" rx="78" ry="13" fill="#12061f"/>
+        <path d="M-40 10 Q-42 -32 0 -38 Q42 -32 40 10Z" fill="#12061f"/>
+        <path d="M-40 4 Q0 16 40 4 L40 10 Q0 22 -40 10Z" fill="#fbbf24" opacity=".75"/>
+      </g>
+      <rect y="262" width="400" height="38" fill="#120a04" opacity=".9"/>
+      ${wheat}
+    </svg>`;
+  }
+  if (t === 'stadium'){
+    return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="g${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#0b1220"/><stop offset="1" stop-color="#4c0519"/></linearGradient>
+        <linearGradient id="h${u}" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#15803d"/><stop offset="1" stop-color="#052e16"/></linearGradient>
+      </defs>
+      <rect width="400" height="300" fill="url(#g${u})"/>
+      <circle cx="60" cy="34" r="4" fill="#fef9c3"/><circle cx="340" cy="34" r="4" fill="#fef9c3"/>
+      <ellipse cx="200" cy="204" rx="230" ry="94" fill="#7f1d1d" opacity=".6"/>
+      <rect x="30" y="172" width="340" height="118" rx="4" fill="url(#h${u})"/>
+      <g stroke="#fff" stroke-width="1.2" opacity=".25">
+        <line x1="100" y1="172" x2="100" y2="290"/><line x1="170" y1="172" x2="170" y2="290"/>
+        <line x1="240" y1="172" x2="240" y2="290"/><line x1="310" y1="172" x2="310" y2="290"/>
+      </g>
+      <rect x="30" y="172" width="24" height="118" fill="#991b1b" opacity=".9"/>
+      <rect x="346" y="172" width="24" height="118" fill="#facc15" opacity=".85"/>
+      <g transform="translate(200,232)">
+        <ellipse rx="30" ry="18" fill="#7c2d12" stroke="#fff" stroke-width="2"/>
+        <line x1="-10" y1="0" x2="10" y2="0" stroke="#fff" stroke-width="2"/>
+      </g>
+    </svg>`;
+  }
   return `<svg viewBox="0 0 400 300" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="genG${uid}" x1="0" y1="0" x2="1" y2="1">
-        <stop offset="0%" stop-color="${e.gradient[0]}"/>
-        <stop offset="100%" stop-color="${e.gradient[1]}"/>
-      </linearGradient>
-    </defs>
-    <rect width="400" height="300" fill="url(#genG${uid})"/>
-    <circle cx="312" cy="56" r="92" fill="rgba(255,255,255,.14)"/>
-    <circle cx="56" cy="252" r="118" fill="rgba(0,0,0,.16)"/>
-    <g opacity="0.5" stroke="rgba(255,255,255,.4)" stroke-width="1.2" fill="none">
-      <path d="M0 210 Q100 170 200 210 T400 210"/>
-      <path d="M0 240 Q100 200 200 240 T400 240"/>
-    </g>
-    <g transform="translate(200,150) scale(5.2) translate(-12,-12)"
-       fill="none" stroke="rgba(255,255,255,.95)" stroke-width="1.25"
-       stroke-linecap="round" stroke-linejoin="round">${path}</g>
+    <defs><linearGradient id="g${u}" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="${e.gradient[0]}"/><stop offset="1" stop-color="${e.gradient[1]}"/>
+    </linearGradient></defs>
+    <rect width="400" height="300" fill="url(#g${u})"/>
+    <circle cx="310" cy="60" r="90" fill="rgba(255,255,255,.13)"/>
+    <circle cx="60" cy="250" r="110" fill="rgba(0,0,0,.15)"/>
+    <g transform="translate(200,150) scale(5) translate(-12,-12)" fill="none" stroke="rgba(255,255,255,.95)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round">${ICON_PATHS[e.icon] || ICON_PATHS.ticket}</g>
   </svg>`;
 }
 
-const ART_RENDERERS = {
-  growlers: artGrowlers,
-  glitch:   artGlitch,
-  luxury:   artLuxury,
-  deco:     artDeco,
-  country:  artCountry,
-  stadium:  artStadium,
-};
-
-function posterSVG(e){
-  artSeq++;
-  const uid = 'x' + artSeq;
-  const fn = ART_RENDERERS[e.art];
-  return fn ? fn(uid) : artGeneric(uid, e);
+function posterSVG(e, ctx){
+  const key = e.id + ':' + (ctx || 'c');
+  let svg = posterCache.get(key);
+  if (!svg){
+    svg = buildArt(e, key.replace(/[^a-z0-9]/gi, ''));
+    posterCache.set(key, svg);
+  }
+  return svg;
 }
 
 /* =========================================================
-   EVENTS DATA
+   EVENTS
    ========================================================= */
 const NEW_PRICING = [
   { name:'Regular', price:200, left:186 },
   { name:'VIP',     price:250, left:64  },
-  { name:'VVIP',    price:300, left:18  },
+  { name:'VVIP',    price:300, left:18  }
 ];
-
 const NEW_SELLERS = {
   primary:['Ticketmaster','AXS'],
   secondary:['SeatGeek','StubHub','Vivid Seats']
 };
 
 const EVENTS = [
-  {
-    id:101, title:"The Growlers: Greek Theatre", artist:"The Growlers",
-    category:"concert", genre:"Psych / Garage Rock",
-    date:"2026-10-03", time:"8:00 PM",
+  { id:101, title:"The Growlers: Greek Theatre", artist:"The Growlers",
+    category:"concert", genre:"Psych / Garage Rock", date:"2026-10-03", time:"8:00 PM",
     venue:"Greek Theatre", city:"Los Angeles, CA", fromPrice:200,
     gradient:["#7c2d12","#fcd34d"], icon:"music", art:"growlers", hot:true,
     pricing:NEW_PRICING, sellers:NEW_SELLERS,
-    desc:"The Growlers bring their sun-bleached, reverb-drenched garage-psych sound back to the Greek Theatre for one night only. Expect a career-spanning set under the stars in Griffith Park, with the band's signature surreal stage design and a full horn section."
-  },
-  {
-    id:102, title:"JPEGMAFIA: The Novo (L.A. LIVE)", artist:"JPEGMAFIA",
-    category:"concert", genre:"Hip-Hop / Experimental",
-    date:"2026-10-02", time:"9:00 PM",
+    desc:"The Growlers bring their sun-bleached, reverb-drenched garage-psych sound back to the Greek Theatre for one night only. Expect a career-spanning set under the stars in Griffith Park, with the band's signature surreal stage design and a full horn section." },
+  { id:102, title:"JPEGMAFIA: The Novo (L.A. LIVE)", artist:"JPEGMAFIA",
+    category:"concert", genre:"Hip-Hop / Experimental", date:"2026-10-02", time:"9:00 PM",
     venue:"The Novo at L.A. LIVE", city:"Los Angeles, CA", fromPrice:200,
     gradient:["#ef4444","#22d3ee"], icon:"mic", art:"glitch", hot:true,
     pricing:NEW_PRICING, sellers:NEW_SELLERS,
-    desc:"Peggy returns to Los Angeles with a full-scale audio-visual assault built for The Novo's intimate floor. Distorted, confrontational and endlessly inventive — this is a live show that has to be seen to be believed. Limited capacity, standing room."
-  },
-  {
-    id:103, title:"Young Thug: YouTube Theater", artist:"Young Thug",
-    category:"concert", genre:"Hip-Hop / Trap",
-    date:"2026-10-04", time:"8:00 PM",
+    desc:"Peggy returns to Los Angeles with a full-scale audio-visual assault built for The Novo's intimate floor. Distorted, confrontational and endlessly inventive — this is a live show that has to be seen to be believed. Limited capacity, standing room." },
+  { id:103, title:"Young Thug: YouTube Theater", artist:"Young Thug",
+    category:"concert", genre:"Hip-Hop / Trap", date:"2026-10-04", time:"8:00 PM",
     venue:"YouTube Theater", city:"Inglewood, CA", fromPrice:200,
     gradient:["#dc2626","#0b0b0d"], icon:"music", art:"luxury", hot:true,
     pricing:NEW_PRICING, sellers:NEW_SELLERS,
-    desc:"One of the most influential voices in modern rap takes over the YouTube Theater in Inglewood. A career-defining setlist spanning mixtape era classics through to brand-new material, with full production and surprise guests."
-  },
-  {
-    id:104, title:"Michelle Branch: The Wiltern", artist:"Michelle Branch",
-    category:"concert", genre:"Alt Pop / Rock",
-    date:"2026-10-03", time:"8:00 PM",
+    desc:"One of the most influential voices in modern rap takes over the YouTube Theater in Inglewood. A career-defining setlist spanning mixtape era classics through to brand-new material, with full production and surprise guests." },
+  { id:104, title:"Michelle Branch: The Wiltern", artist:"Michelle Branch",
+    category:"concert", genre:"Alt Pop / Rock", date:"2026-10-03", time:"8:00 PM",
     venue:"The Wiltern", city:"Los Angeles, CA", fromPrice:200,
     gradient:["#4a1d1d","#fcd34d"], icon:"music", art:"deco", hot:true,
     pricing:NEW_PRICING, sellers:NEW_SELLERS,
-    desc:"An intimate evening with Michelle Branch inside the historic Wiltern Theatre. Expect the hits, deep cuts and new material performed with a full band beneath the venue's legendary Art Deco ceiling. Seated show, all ages."
-  },
-  {
-    id:105, title:"Thomas Rhett: Honda Center (Anaheim)", artist:"Thomas Rhett",
-    category:"concert", genre:"Country",
-    date:"2026-10-02", time:"7:00 PM",
+    desc:"An intimate evening with Michelle Branch inside the historic Wiltern Theatre. Expect the hits, deep cuts and new material performed with a full band beneath the venue's legendary Art Deco ceiling. Seated show, all ages." },
+  { id:105, title:"Thomas Rhett: Honda Center (Anaheim)", artist:"Thomas Rhett",
+    category:"concert", genre:"Country", date:"2026-10-02", time:"7:00 PM",
     venue:"Honda Center", city:"Anaheim, CA", fromPrice:200,
     gradient:["#3b1d52","#facc15"], icon:"music", art:"country", hot:true,
     pricing:NEW_PRICING, sellers:NEW_SELLERS,
-    desc:"Thomas Rhett brings his arena-sized country show to the Honda Center in Anaheim. A full night of singalong hits, a massive stage production, and one of the most energetic live bands in Nashville. Doors open at 6:00 PM."
-  },
-  {
-    id:106, title:"College Football — Washington vs. #18 USC", artist:"Washington vs. #18 USC",
-    category:"sports", genre:"College Football",
-    date:"2026-10-03", time:"12:30 PM",
+    desc:"Thomas Rhett brings his arena-sized country show to the Honda Center in Anaheim. A full night of singalong hits, a massive stage production, and one of the most energetic live bands in Nashville. Doors open at 6:00 PM." },
+  { id:106, title:"College Football — Washington vs. #18 USC", artist:"Washington vs. #18 USC",
+    category:"sports", genre:"College Football", date:"2026-10-03", time:"12:30 PM",
     venue:"Los Angeles Memorial Coliseum", city:"Los Angeles, CA", fromPrice:200,
     gradient:["#4c0519","#facc15"], icon:"trophy", art:"stadium", hot:true,
     pricing:NEW_PRICING, sellers:NEW_SELLERS,
-    desc:"A massive conference crossover showdown as the Huskies travel to the Los Angeles Memorial Coliseum to face the 18th-ranked Trojans. Both programs are chasing a conference title — expect a sellout and a raucous student section."
-  },
+    desc:"A massive conference crossover showdown as the Huskies travel to the Los Angeles Memorial Coliseum to face the 18th-ranked Trojans. Both programs are chasing a conference title — expect a sellout and a raucous student section." },
 
-  {
-    id:1, title:"Midnight Echoes World Tour", artist:"Aurora Vale",
+  { id:1, title:"Midnight Echoes World Tour", artist:"Aurora Vale",
     category:"concert", genre:"Pop", date:"2026-07-18", time:"8:00 PM",
     venue:"Madison Square Garden", city:"New York, NY", fromPrice:89,
     gradient:["#7c3aed","#db2777"], icon:"music",
-    desc:"Aurora Vale brings her chart-topping Midnight Echoes album to life with a full orchestral backing, immersive light design, and a setlist spanning her entire catalog. Expect three costume changes and one very special surprise guest."
-  },
-  {
-    id:2, title:"Steel City Showdown — Finals Game 5", artist:"Golden State vs. Boston",
+    desc:"Aurora Vale brings her chart-topping Midnight Echoes album to life with a full orchestral backing, immersive light design, and a setlist spanning her entire catalog." },
+  { id:2, title:"Steel City Showdown — Finals Game 5", artist:"Golden State vs. Boston",
     category:"sports", genre:"Basketball", date:"2026-06-12", time:"7:30 PM",
     venue:"Chase Center", city:"San Francisco, CA", fromPrice:145,
     gradient:["#f59e0b","#dc2626"], icon:"trophy",
-    desc:"The series returns to the Bay for a pivotal Game 5. Both rosters are healthy, the crowd is deafening, and the trophy is one win away for either side. Don't miss the loudest arena in the league."
-  },
-  {
-    id:3, title:"The Lantern Keeper — A New Musical", artist:"Broadway Original Cast",
+    desc:"The series returns to the Bay for a pivotal Game 5. Both rosters are healthy, the crowd is deafening, and the trophy is one win away for either side." },
+  { id:3, title:"The Lantern Keeper — A New Musical", artist:"Broadway Original Cast",
     category:"theater", genre:"Musical", date:"2026-08-05", time:"7:00 PM",
     venue:"Gershwin Theatre", city:"New York, NY", fromPrice:79,
     gradient:["#0891b2","#7c3aed"], icon:"theater",
-    desc:"Winner of six Tony Awards, The Lantern Keeper tells the story of a lighthouse family across three generations. A stunning score, breathtaking set design, and a finale that has audiences on their feet every single night."
-  },
-  {
-    id:4, title:"Late Night Laughs with Marcus Reed", artist:"Marcus Reed",
+    desc:"Winner of six Tony Awards, The Lantern Keeper tells the story of a lighthouse family across three generations. A finale that has audiences on their feet every single night." },
+  { id:4, title:"Late Night Laughs with Marcus Reed", artist:"Marcus Reed",
     category:"comedy", genre:"Stand-Up", date:"2026-08-02", time:"9:30 PM",
     venue:"The Chicago Theatre", city:"Chicago, IL", fromPrice:45,
     gradient:["#ef4444","#f97316"], icon:"mic",
-    desc:"Fresh off his Netflix special, Marcus Reed returns with two hours of brand-new material about marriage, middle age, and the absurdity of airport security. Contains strong language."
-  },
-  {
-    id:5, title:"Neon Skyline Festival 2026", artist:"40+ Artists · 3 Stages",
+    desc:"Fresh off his Netflix special, Marcus Reed returns with two hours of brand-new material. Contains strong language." },
+  { id:5, title:"Neon Skyline Festival 2026", artist:"40+ Artists · 3 Stages",
     category:"festival", genre:"Music Festival", date:"2026-09-05", time:"12:00 PM",
     venue:"Grant Park", city:"Chicago, IL", fromPrice:189,
     gradient:["#06b6d4","#8b5cf6"], icon:"tent",
-    desc:"Three days, three stages, and over forty artists spanning indie, electronic, hip-hop and rock. Plus a curated food village, art installations, and late-night afterparties across the city."
-  },
-  {
-    id:6, title:"Electric Bloom — Live at Red Rocks", artist:"Neon Districts",
+    desc:"Three days, three stages, and over forty artists spanning indie, electronic, hip-hop and rock. Plus a curated food village and late-night afterparties." },
+  { id:6, title:"Electric Bloom — Live at Red Rocks", artist:"Neon Districts",
     category:"concert", genre:"Electronic", date:"2026-07-25", time:"8:30 PM",
     venue:"Red Rocks Amphitheatre", city:"Morrison, CO", fromPrice:65,
     gradient:["#22c55e","#0ea5e9"], icon:"music",
-    desc:"An audiovisual experience built for the most iconic natural venue in America. Neon Districts debut a brand-new live rig with 360° projection mapped directly onto the rock formations."
-  },
-  {
-    id:7, title:"Gridiron Kickoff — Sunday Night Football", artist:"Dallas vs. Philadelphia",
+    desc:"An audiovisual experience built for the most iconic natural venue in America, with 360° projection mapped onto the rock formations." },
+  { id:7, title:"Gridiron Kickoff — Sunday Night Football", artist:"Dallas vs. Philadelphia",
     category:"sports", genre:"Football", date:"2026-09-13", time:"8:20 PM",
     venue:"AT&T Stadium", city:"Arlington, TX", fromPrice:120,
     gradient:["#1d4ed8","#0f172a"], icon:"trophy",
-    desc:"A bitter divisional rivalry opens the season under the lights. Jerry World's massive video board, a raucous crowd, and two teams with everything to prove."
-  },
-  {
-    id:8, title:"The Nutcracker — Grand Ballet", artist:"National Ballet Company",
+    desc:"A bitter divisional rivalry opens the season under the lights. Two teams with everything to prove." },
+  { id:8, title:"The Nutcracker — Grand Ballet", artist:"National Ballet Company",
     category:"theater", genre:"Ballet", date:"2026-12-12", time:"7:30 PM",
     venue:"Lincoln Center", city:"New York, NY", fromPrice:95,
     gradient:["#be185d","#7c3aed"], icon:"theater",
-    desc:"The holiday tradition returns with a live 60-piece orchestra, hand-painted sets, and over 120 dancers and children from the company school. A perfect introduction to ballet for all ages."
-  },
-  {
-    id:9, title:"Harbor Lights Jazz Sessions", artist:"The Ellis Quartet",
+    desc:"The holiday tradition returns with a live 60-piece orchestra, hand-painted sets, and over 120 dancers." },
+  { id:9, title:"Harbor Lights Jazz Sessions", artist:"The Ellis Quartet",
     category:"concert", genre:"Jazz", date:"2026-08-14", time:"9:00 PM",
     venue:"Blue Note", city:"New York, NY", fromPrice:55,
     gradient:["#b45309","#78350f"], icon:"music",
-    desc:"An intimate two-set evening of modern jazz in the most storied club in Greenwich Village. Table seating, craft cocktails, and a band that has played together for twenty-two years."
-  },
-  {
-    id:10, title:"Diamond Classic — Cubs vs. Cardinals", artist:"Chicago vs. St. Louis",
+    desc:"An intimate two-set evening of modern jazz in the most storied club in Greenwich Village." },
+  { id:10, title:"Diamond Classic — Cubs vs. Cardinals", artist:"Chicago vs. St. Louis",
     category:"sports", genre:"Baseball", date:"2026-07-04", time:"1:20 PM",
     venue:"Wrigley Field", city:"Chicago, IL", fromPrice:38,
     gradient:["#0369a1","#dc2626"], icon:"trophy",
-    desc:"Fourth of July at the Friendly Confines. An afternoon rivalry game, fireworks after the final out, and a ballpark that turns 112 this year. Bleacher seats go fast."
-  },
-  {
-    id:11, title:"Punchline Tour — Sofia Marquez", artist:"Sofia Marquez",
+    desc:"Fourth of July at the Friendly Confines. Fireworks after the final out." },
+  { id:11, title:"Punchline Tour — Sofia Marquez", artist:"Sofia Marquez",
     category:"comedy", genre:"Stand-Up", date:"2026-10-03", time:"8:00 PM",
     venue:"Dolby Theatre", city:"Los Angeles, CA", fromPrice:52,
     gradient:["#e11d48","#7c3aed"], icon:"mic",
-    desc:"Sofia Marquez's first arena-sized tour after a decade of club shows. Sharp, personal, and unexpectedly warm — a comedy hour that has been called 'the best of the year' by three major publications."
-  },
-  {
-    id:12, title:"Symphony Under the Stars", artist:"LA Philharmonic",
+    desc:"Sofia Marquez's first arena-sized tour after a decade of club shows. Sharp, personal, and unexpectedly warm." },
+  { id:12, title:"Symphony Under the Stars", artist:"LA Philharmonic",
     category:"concert", genre:"Classical", date:"2026-08-29", time:"7:30 PM",
     venue:"Hollywood Bowl", city:"Los Angeles, CA", fromPrice:42,
     gradient:["#4c1d95","#1e3a8a"], icon:"music",
-    desc:"An evening of Beethoven, Ravel and a world premiere under the open sky. Bring a picnic, arrive early for the pre-concert talk, and stay for the fireworks finale."
-  },
-  {
-    id:13, title:"Winter Classic — NHL Outdoor Game", artist:"Boston vs. Montreal",
+    desc:"An evening of Beethoven, Ravel and a world premiere under the open sky, ending with a fireworks finale." },
+  { id:13, title:"Winter Classic — NHL Outdoor Game", artist:"Boston vs. Montreal",
     category:"sports", genre:"Hockey", date:"2027-01-01", time:"1:00 PM",
     venue:"Fenway Park", city:"Boston, MA", fromPrice:88,
     gradient:["#0ea5e9","#1e293b"], icon:"trophy",
-    desc:"The oldest rivalry in hockey, played outdoors in a baseball cathedral on New Year's Day. Forty thousand fans, freezing temperatures, and one unforgettable spectacle."
-  },
-  {
-    id:14, title:"Cirque Lumière — Aerial Spectacular", artist:"Cirque Lumière Troupe",
+    desc:"The oldest rivalry in hockey, played outdoors in a baseball cathedral on New Year's Day." },
+  { id:14, title:"Cirque Lumière — Aerial Spectacular", artist:"Cirque Lumière Troupe",
     category:"theater", genre:"Cirque", date:"2026-11-08", time:"7:00 PM",
     venue:"Bellagio Theatre", city:"Las Vegas, NV", fromPrice:105,
     gradient:["#f59e0b","#db2777"], icon:"sparkles",
-    desc:"A brand-new production featuring 68 performers, a 1.5 million-litre water stage, and aerial choreography that defies belief. Residency performances five nights a week."
-  },
-  {
-    id:15, title:"Desert Bloom Country Fest", artist:"12 Headliners · 2 Days",
+    desc:"A brand-new production featuring 68 performers, a 1.5 million-litre water stage, and aerial choreography." },
+  { id:15, title:"Desert Bloom Country Fest", artist:"12 Headliners · 2 Days",
     category:"festival", genre:"Country", date:"2026-04-18", time:"11:00 AM",
     venue:"Empire Polo Grounds", city:"Indio, CA", fromPrice:159,
     gradient:["#ca8a04","#b45309"], icon:"tent",
-    desc:"Two days of country's biggest names across two stages, plus a BBQ pavilion, line dancing tent, and overnight camping options. Gates open at 11 AM sharp."
-  },
-  {
-    id:16, title:"Grand Slam Tennis — Semifinals", artist:"Men's & Women's Singles",
+    desc:"Two days of country's biggest names across two stages, plus a BBQ pavilion and overnight camping." },
+  { id:16, title:"Grand Slam Tennis — Semifinals", artist:"Men's & Women's Singles",
     category:"sports", genre:"Tennis", date:"2026-09-11", time:"12:00 PM",
     venue:"Arthur Ashe Stadium", city:"Queens, NY", fromPrice:110,
     gradient:["#16a34a","#065f46"], icon:"trophy",
-    desc:"Both singles semifinals in a single session under the roof at Ashe. Four of the top five players in the world, and a crowd that knows exactly how to react to a five-set thriller."
-  },
-  {
-    id:17, title:"Fuego Latino Tour", artist:"Camila Reyes",
+    desc:"Both singles semifinals in a single session under the roof at Ashe." },
+  { id:17, title:"Fuego Latino Tour", artist:"Camila Reyes",
     category:"concert", genre:"Latin", date:"2026-10-24", time:"8:00 PM",
     venue:"Kaseya Center", city:"Miami, FL", fromPrice:72,
     gradient:["#f43f5e","#f59e0b"], icon:"music",
-    desc:"Camila Reyes brings reggaeton, cumbia and pop together in a two-hour show that has sold out nineteen cities. Full live band, twelve dancers, and a stage that extends into the crowd."
-  },
-  {
-    id:18, title:"The Improv All-Stars", artist:"Rotating Cast of 8",
+    desc:"Camila Reyes brings reggaeton, cumbia and pop together in a two-hour show that has sold out nineteen cities." },
+  { id:18, title:"The Improv All-Stars", artist:"Rotating Cast of 8",
     category:"comedy", genre:"Improv", date:"2026-09-20", time:"9:00 PM",
     venue:"Comedy Cellar", city:"New York, NY", fromPrice:35,
     gradient:["#7c3aed","#4338ca"], icon:"theater",
-    desc:"Eight of the sharpest improvisers in the country, one suggestion from the audience, and ninety minutes of entirely unscripted comedy. Different show every single night."
-  },
-  {
-    id:19, title:"Moonlit Cinema — Film Scores Live", artist:"SF Symphony",
+    desc:"Eight of the sharpest improvisers in the country, one suggestion from the audience, ninety minutes of unscripted comedy." },
+  { id:19, title:"Moonlit Cinema — Film Scores Live", artist:"SF Symphony",
     category:"concert", genre:"Film Score", date:"2026-11-21", time:"7:30 PM",
     venue:"Davies Symphony Hall", city:"San Francisco, CA", fromPrice:58,
     gradient:["#1e293b","#6d28d9"], icon:"music",
-    desc:"Iconic film scores performed live to picture on a full cinema screen — Williams, Zimmer, Giacchino and more. A 90-piece orchestra and a 40-voice choir."
-  },
-  {
-    id:20, title:"Heavyweight Title Night", artist:"Championship Boxing",
+    desc:"Iconic film scores performed live to picture on a full cinema screen — Williams, Zimmer, Giacchino and more." },
+  { id:20, title:"Heavyweight Title Night", artist:"Championship Boxing",
     category:"sports", genre:"Boxing", date:"2026-10-10", time:"6:00 PM",
     venue:"T-Mobile Arena", city:"Las Vegas, NV", fromPrice:175,
     gradient:["#dc2626","#111827"], icon:"trophy",
-    desc:"Undisputed heavyweight championship on the line, plus a stacked undercard with three title eliminators. Doors open at 4 PM for the prelim bouts."
-  },
-  {
-    id:21, title:"Indie Underground Showcase", artist:"Six Emerging Bands",
+    desc:"Undisputed heavyweight championship on the line, plus three title eliminators on the undercard." },
+  { id:21, title:"Indie Underground Showcase", artist:"Six Emerging Bands",
     category:"concert", genre:"Indie Rock", date:"2026-08-07", time:"8:00 PM",
     venue:"The Fillmore", city:"San Francisco, CA", fromPrice:32,
     gradient:["#0f766e","#155e75"], icon:"music",
-    desc:"Six of the most exciting emerging acts on the circuit, one legendary room, and a poster included with every ticket. Standing room only, all ages."
-  },
-  {
-    id:22, title:"Mardi Gras Music Festival", artist:"50+ Artists · French Quarter",
+    desc:"Six of the most exciting emerging acts on the circuit, one legendary room, standing room only." },
+  { id:22, title:"Mardi Gras Music Festival", artist:"50+ Artists · French Quarter",
     category:"festival", genre:"Culture Festival", date:"2027-02-13", time:"10:00 AM",
     venue:"French Quarter", city:"New Orleans, LA", fromPrice:99,
     gradient:["#7c3aed","#f59e0b"], icon:"tent",
-    desc:"Ten days of parades, brass bands, jazz funerals and street food across the French Quarter. Single-day and full-festival passes available, plus VIP balcony viewing on Bourbon Street."
-  },
+    desc:"Ten days of parades, brass bands, jazz funerals and street food across the French Quarter." }
 ];
 
 /* =========================================================
    STATE
    ========================================================= */
 const state = {
-  category:'all',
-  query:'',
-  city:'all',
-  sort:'date',
-  cart:[],
-  currentEvent:null,
-  currentTiers:[],
-  selection:{},
+  category:'all', query:'', city:'all', sort:'date',
+  cart:[], currentEvent:null, currentTiers:[], selection:{}
 };
 
-/* =========================================================
-   HELPERS
-   ========================================================= */
 const $ = id => document.getElementById(id);
-const money = n => '$' + n.toLocaleString('en-US', { minimumFractionDigits:0, maximumFractionDigits:0 });
+const money = n => '$' + n.toLocaleString('en-US', { maximumFractionDigits:0 });
 
 function seededRand(seed){
   const x = Math.sin(seed * 127.1 + 311.7) * 43758.5453;
   return x - Math.floor(x);
 }
 function fmtDate(iso){
-  const d = new Date(iso + 'T12:00:00');
-  return d.toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
+  return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday:'long', month:'long', day:'numeric', year:'numeric' });
 }
 function fmtShort(iso){
-  const d = new Date(iso + 'T12:00:00');
-  return d.toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
+  return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { weekday:'short', month:'short', day:'numeric' });
 }
 function monthAbbr(iso){
   return new Date(iso + 'T12:00:00').toLocaleDateString('en-US', { month:'short' }).toUpperCase();
@@ -1459,39 +1130,37 @@ function tiersFor(event){
     concert: [
       { name:'General Admission', mult:1,   range:[140,420] },
       { name:'Floor / Pit',       mult:1.9, range:[40,120]  },
-      { name:'VIP Package',       mult:3.4, range:[8,30]    },
+      { name:'VIP Package',       mult:3.4, range:[8,30]    }
     ],
     sports: [
       { name:'Upper Deck',    mult:1,   range:[220,640] },
       { name:'Lower Bowl',    mult:2.1, range:[60,190]  },
-      { name:'Courtside VIP', mult:4.5, range:[6,24]    },
+      { name:'Courtside VIP', mult:4.5, range:[6,24]    }
     ],
     theater: [
       { name:'Balcony',   mult:1,   range:[80,210] },
       { name:'Mezzanine', mult:1.7, range:[40,115] },
-      { name:'Orchestra', mult:2.8, range:[12,52]  },
+      { name:'Orchestra', mult:2.8, range:[12,52]  }
     ],
     comedy: [
       { name:'General Admission', mult:1,   range:[100,260] },
       { name:'Front Section',     mult:1.6, range:[30,85]   },
-      { name:'VIP Meet & Greet',  mult:2.9, range:[8,22]    },
+      { name:'VIP Meet & Greet',  mult:2.9, range:[8,22]    }
     ],
     festival: [
       { name:'Single Day Pass', mult:1,   range:[600,2400] },
       { name:'3-Day GA Pass',   mult:2.5, range:[220,900]  },
-      { name:'VIP Lounge Pass', mult:5.4, range:[40,160]   },
-    ],
+      { name:'VIP Lounge Pass', mult:5.4, range:[40,160]   }
+    ]
   }[event.category];
-
   return presets.map((p, i) => {
     const r = seededRand(event.id * 10 + i);
-    const left = Math.round(p.range[0] + r * (p.range[1] - p.range[0]));
-    return { name:p.name, price:Math.round(event.fromPrice * p.mult), left };
+    return { name:p.name, price:Math.round(event.fromPrice * p.mult), left:Math.round(p.range[0] + r * (p.range[1] - p.range[0])) };
   });
 }
 
-function cartTotalQty(){ return state.cart.reduce((s,i) => s + i.qty, 0); }
-function cartSubtotal(){ return state.cart.reduce((s,i) => s + i.qty * i.price, 0); }
+const cartQty = () => state.cart.reduce((s,i) => s + i.qty, 0);
+const cartSub = () => state.cart.reduce((s,i) => s + i.qty * i.price, 0);
 
 function toast(msg, iconName, variant){
   const el = document.createElement('div');
@@ -1500,95 +1169,43 @@ function toast(msg, iconName, variant){
   $('toastStack').appendChild(el);
   setTimeout(() => {
     el.classList.add('out');
-    setTimeout(() => el.remove(), 300);
-  }, 3200);
+    setTimeout(() => el.remove(), 250);
+  }, 3000);
 }
 
 /* =========================================================
-   CLIPBOARD + TELEGRAM
+   TELEGRAM (basket checkout only)
    ========================================================= */
-function fallbackCopy(text){
-  const ta = document.createElement('textarea');
-  ta.value = text;
-  ta.setAttribute('readonly','');
-  ta.style.position = 'fixed';
-  ta.style.top = '0';
-  ta.style.left = '0';
-  ta.style.opacity = '0';
-  document.body.appendChild(ta);
-  ta.focus();
-  ta.select();
-  try { document.execCommand('copy'); } catch(e){}
-  ta.remove();
-}
 function copyText(text){
   if (navigator.clipboard && window.isSecureContext){
-    navigator.clipboard.writeText(text).catch(() => fallbackCopy(text));
-  } else {
-    fallbackCopy(text);
-  }
-}
-function sendToTelegram(message){
-  copyText(message);
-  toast('Order details copied — paste them in the Telegram chat', 'check', 'ok');
-  setTimeout(() => {
-    window.open(TELEGRAM_URL, '_blank', 'noopener,noreferrer');
-  }, 450);
-}
-
-/* =========================================================
-   TELEGRAM MESSAGE BUILDERS
-   ========================================================= */
-const DIV = '------------------------------------';
-
-function eventBlock(e, tiers){
-  const lines = [
-    e.title,
-    'Artist / Teams: ' + e.artist,
-    'Date: ' + fmtDate(e.date) + ' at ' + e.time,
-    'Venue: ' + e.venue + ' — ' + e.city,
-    'Category: ' + CATEGORY_META[e.category].label + ' / ' + e.genre,
-  ];
-  if (e.sellers){
-    lines.push('Primary sellers: ' + e.sellers.primary.join(', '));
-    lines.push('Resale marketplaces: ' + e.sellers.secondary.join(', '));
-  }
-  let total = 0;
-  if (tiers && tiers.length){
-    lines.push('');
-    lines.push('TICKETS');
-    tiers.forEach(t => {
-      const lineTotal = t.price * t.qty;
-      total += lineTotal;
-      lines.push('  - ' + t.name + ' x ' + t.qty + '  =  ' + money(lineTotal));
+    navigator.clipboard.writeText(text).catch(() => {
+      const ta = document.createElement('textarea');
+      ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+      document.body.appendChild(ta); ta.select();
+      try { document.execCommand('copy'); } catch(e){}
+      ta.remove();
     });
+  } else {
+    const ta = document.createElement('textarea');
+    ta.value = text; ta.style.position = 'fixed'; ta.style.opacity = '0';
+    document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){}
+    ta.remove();
   }
-  lines.push('Subtotal: ' + money(total));
-  return { text: lines.join('\n'), total };
 }
 
-function singleEventMessage(e, tiers){
-  const block = eventBlock(e, tiers);
-  return [
-    'TICKET REQUEST — TixNest',
-    DIV,
-    block.text,
-    DIV,
-    'TOTAL: ' + money(block.total),
-    '',
-    'Please confirm availability and payment details. Thank you.'
-  ].join('\n');
-}
-
-function cartMessage(){
+/* Only called from the basket drawer checkout button */
+function checkoutBasketOnTelegram(){
+  if (!state.cart.length) return;
+  const DIV = '------------------------------------';
   const lines = ['TICKET REQUEST — TixNest', DIV,
-                 'Items: ' + state.cart.length + '   Tickets: ' + cartTotalQty(), ''];
+    'Items: ' + state.cart.length + '   Tickets: ' + cartQty(), ''];
   let grand = 0;
   state.cart.forEach((item, i) => {
     const e = EVENTS.find(x => x.id === item.eventId);
     const lineTotal = item.price * item.qty;
     grand += lineTotal;
-    lines.push((i + 1) + '. ' + e.title);
+    lines.push((i+1) + '. ' + e.title);
     lines.push('   Date: ' + fmtDate(e.date) + ' at ' + e.time);
     lines.push('   Venue: ' + e.venue + ' — ' + e.city);
     lines.push('   ' + item.tier + ' x ' + item.qty + '  =  ' + money(lineTotal));
@@ -1598,13 +1215,17 @@ function cartMessage(){
   lines.push('TOTAL: ' + money(grand));
   lines.push('');
   lines.push('Please confirm availability and payment details. Thank you.');
-  return lines.join('\n');
+  const msg = lines.join('\n');
+
+  copyText(msg);
+  toast('Basket copied — paste it in the Telegram chat', 'check', 'ok');
+  setTimeout(() => window.open(TG_URL, '_blank', 'noopener,noreferrer'), 400);
 }
 
 /* =========================================================
    CITY FILTER
    ========================================================= */
-(function buildCityFilter(){
+(function(){
   const cities = [...new Set(EVENTS.map(e => e.city))].sort();
   const sel = $('cityFilter');
   cities.forEach(c => {
@@ -1615,21 +1236,20 @@ function cartMessage(){
 })();
 
 /* =========================================================
-   GRID RENDERING
+   GRID
    ========================================================= */
 function visibleEvents(){
-  let list = EVENTS.slice();
+  let list = EVENTS;
   if (state.category !== 'all') list = list.filter(e => e.category === state.category);
   if (state.city !== 'all')     list = list.filter(e => e.city === state.city);
-
-  if (state.query.trim()){
-    const q = state.query.trim().toLowerCase();
+  if (state.query){
+    const q = state.query;
     list = list.filter(e =>
       (e.title + ' ' + e.artist + ' ' + e.venue + ' ' + e.city + ' ' + e.genre + ' ' + CATEGORY_META[e.category].label)
         .toLowerCase().includes(q)
     );
   }
-
+  list = list.slice();
   switch (state.sort){
     case 'date':       list.sort((a,b) => new Date(a.date) - new Date(b.date)); break;
     case 'price-asc':  list.sort((a,b) => a.fromPrice - b.fromPrice); break;
@@ -1639,12 +1259,11 @@ function visibleEvents(){
   return list;
 }
 
-function cardHTML(e, idx){
+function cardHTML(e){
   const meta = CATEGORY_META[e.category];
-  return `
-  <article class="card" data-open="${e.id}" style="animation-delay:${Math.min(idx * 24, 380)}ms">
+  return `<article class="card" data-open="${e.id}">
     <div class="poster">
-      <div class="poster-art">${posterSVG(e)}</div>
+      <div class="poster-art">${posterSVG(e,'c')}</div>
       <div class="date-badge"><span>${monthAbbr(e.date)}</span><strong>${dayNum(e.date)}</strong></div>
       <span class="cat-chip">${ic(meta.icon)}${meta.label}</span>
       ${e.hot ? '<span class="hot-chip">' + ic('bolt') + 'On Sale</span>' : ''}
@@ -1658,8 +1277,8 @@ function cardHTML(e, idx){
         <div class="price" data-price="1" aria-hidden="true">
           <span>from</span><strong>${money(e.fromPrice)}</strong>
         </div>
-        <button class="btn-buy" data-buy="${e.id}" aria-label="Buy tickets for ${e.title}">
-          ${ic('ticket')}<span>Buy</span>
+        <button class="btn-buy" data-add="${e.id}">
+          ${ic('cart')}<span>Add to Basket</span>
         </button>
       </div>
     </div>
@@ -1672,17 +1291,10 @@ function renderEvents(){
   $('resultCount').textContent = list.length + ' event' + (list.length === 1 ? '' : 's') + ' found';
 
   const titles = { all:'All Events', concert:'Concerts', sports:'Sports', theater:'Theater & Arts', comedy:'Comedy', festival:'Festivals' };
-  $('sectionTitle').textContent = state.query.trim()
-    ? 'Results for "' + state.query.trim() + '"'
-    : titles[state.category];
+  $('sectionTitle').textContent = state.query ? 'Results for "' + state.query + '"' : titles[state.category];
 
   if (!list.length){
-    grid.innerHTML =
-      '<div class="empty">' +
-        '<div class="big">' + ic('search') + '</div>' +
-        '<h3>No events match your search</h3>' +
-        '<p>Try a different keyword, or clear your filters to browse everything.</p>' +
-      '</div>';
+    grid.innerHTML = '<div class="empty"><div class="big">' + ic('search') + '</div><h3>No events match your search</h3><p>Try a different keyword, or clear your filters to browse everything.</p></div>';
     return;
   }
   grid.innerHTML = list.map(cardHTML).join('');
@@ -1708,19 +1320,17 @@ document.querySelectorAll('.foot-col a[data-cat]').forEach(a => a.addEventListen
    SEARCH + SORT
    ========================================================= */
 let searchTimer;
-function handleSearch(val){
-  state.query = val;
+$('headerSearch').addEventListener('input', e => {
+  const v = e.target.value.trim().toLowerCase();
   clearTimeout(searchTimer);
-  searchTimer = setTimeout(renderEvents, 130);
-}
-$('headerSearch').addEventListener('input', e => handleSearch(e.target.value));
+  searchTimer = setTimeout(() => { state.query = v; renderEvents(); }, 150);
+});
 $('heroGo').addEventListener('click', () => {
   state.city = $('cityFilter').value;
-  state.query = $('headerSearch').value;
+  state.query = $('headerSearch').value.trim().toLowerCase();
   renderEvents();
   const grid = $('eventGrid');
-  const y = grid.getBoundingClientRect().top + window.pageYOffset - 90;
-  window.scrollTo({ top: y, behavior:'smooth' });
+  window.scrollTo({ top: grid.getBoundingClientRect().top + window.pageYOffset - 90, behavior:'smooth' });
 });
 $('cityFilter').addEventListener('change', e => { state.city = e.target.value; renderEvents(); });
 $('sortSelect').addEventListener('change', e => { state.sort = e.target.value; renderEvents(); });
@@ -1731,12 +1341,10 @@ $('sortSelect').addEventListener('change', e => { state.sort = e.target.value; r
 function openEvent(id){
   const e = EVENTS.find(x => x.id === id);
   if (!e) return;
-
   state.currentEvent = e;
   state.currentTiers = tiersFor(e);
   state.selection = {};
   state.currentTiers.forEach(t => state.selection[t.name] = 0);
-
   renderEventModal();
   $('eventModal').classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -1751,42 +1359,29 @@ function renderEventModal(){
     const low = t.left < 25;
     const bc = tierBadgeClass(t.name);
     const badgeLabel = bc === 'vvip' ? 'VVIP' : bc === 'vip' ? 'VIP' : 'REG';
-    return `
-      <div class="tier ${qty > 0 ? 'selected' : ''}" data-tier="${i}">
-        <div class="tier-info">
-          <div class="tier-name">
-            <span class="tier-badge ${bc}">${badgeLabel}</span>
-            ${t.name}
-          </div>
-          <div class="tier-note ${low ? 'low' : ''}">
-            ${low ? 'Only ' + t.left + ' left' : t.left + ' seats available'}
-          </div>
-        </div>
-        <div class="tier-price" data-price="1" aria-hidden="true">${money(t.price)}</div>
-        <div class="stepper">
-          <button data-step="-1" data-idx="${i}" ${qty === 0 ? 'disabled' : ''} aria-label="Decrease quantity">&minus;</button>
-          <span class="qty">${qty}</span>
-          <button data-step="1" data-idx="${i}" ${qty >= 8 ? 'disabled' : ''} aria-label="Increase quantity">+</button>
-        </div>
-      </div>`;
+    return `<div class="tier ${qty > 0 ? 'selected' : ''}" data-tier="${i}">
+      <div class="tier-info">
+        <div class="tier-name"><span class="tier-badge ${bc}">${badgeLabel}</span>${t.name}</div>
+        <div class="tier-note ${low ? 'low' : ''}">${low ? 'Only ' + t.left + ' left' : t.left + ' seats available'}</div>
+      </div>
+      <div class="tier-price" data-price="1" aria-hidden="true">${money(t.price)}</div>
+      <div class="stepper">
+        <button data-step="-1" data-idx="${i}" ${qty === 0 ? 'disabled' : ''} aria-label="Decrease">&minus;</button>
+        <span class="qty">${qty}</span>
+        <button data-step="1" data-idx="${i}" ${qty >= 8 ? 'disabled' : ''} aria-label="Increase">+</button>
+      </div>
+    </div>`;
   }).join('');
 
-  const sellersHTML = e.sellers ? `
-    <div class="sellers">
-      <h6>${ic('cart')} Where to buy tickets</h6>
-      <div class="seller-row">
-        <span class="lbl">Primary sellers</span>
-        <span class="val">${e.sellers.primary.map(s => '<span class="seller-tag">' + s + '</span>').join('')}</span>
-      </div>
-      <div class="seller-row">
-        <span class="lbl">Resale marketplaces</span>
-        <span class="val">${e.sellers.secondary.map(s => '<span class="seller-tag">' + s + '</span>').join('')}</span>
-      </div>
-    </div>` : '';
+  const sellersHTML = e.sellers ? `<div class="sellers">
+    <h6>${ic('cart')} Where to buy tickets</h6>
+    <div class="seller-row"><span class="lbl">Primary sellers</span><span class="val">${e.sellers.primary.map(s => '<span class="seller-tag">' + s + '</span>').join('')}</span></div>
+    <div class="seller-row"><span class="lbl">Resale marketplaces</span><span class="val">${e.sellers.secondary.map(s => '<span class="seller-tag">' + s + '</span>').join('')}</span></div>
+  </div>` : '';
 
   $('eventModalContent').innerHTML = `
     <div class="modal-hero">
-      <div class="m-art">${posterSVG(e)}</div>
+      <div class="m-art">${posterSVG(e,'m')}</div>
       <button class="modal-close" id="closeEventModal" aria-label="Close">${ic('close')}</button>
       <div class="m-info">
         <span class="m-tag">${ic(meta.icon)}${meta.label} &middot; ${e.genre}</span>
@@ -1794,30 +1389,16 @@ function renderEventModal(){
         <div class="m-sub">${e.artist}</div>
       </div>
     </div>
-
     <div class="modal-body">
       <div class="meta-grid">
-        <div class="meta-item">
-          <span class="mi">${ic('calendar')}</span>
-          <div><div class="ml">Date &amp; Time</div><div class="mv">${fmtDate(e.date)}<br>${e.time}</div></div>
-        </div>
-        <div class="meta-item">
-          <span class="mi">${ic('pin')}</span>
-          <div><div class="ml">Venue</div><div class="mv">${e.venue}<br>${e.city}</div></div>
-        </div>
-        <div class="meta-item">
-          <span class="mi">${ic('seats')}</span>
-          <div><div class="ml">Availability</div><div class="mv">${state.currentTiers.reduce((s,t)=>s+t.left,0)} seats<br>${state.currentTiers.length} price tiers</div></div>
-        </div>
+        <div class="meta-item"><span class="mi">${ic('calendar')}</span><div><div class="ml">Date &amp; Time</div><div class="mv">${fmtDate(e.date)}<br>${e.time}</div></div></div>
+        <div class="meta-item"><span class="mi">${ic('pin')}</span><div><div class="ml">Venue</div><div class="mv">${e.venue}<br>${e.city}</div></div></div>
+        <div class="meta-item"><span class="mi">${ic('seats')}</span><div><div class="ml">Availability</div><div class="mv">${state.currentTiers.reduce((s,t)=>s+t.left,0)} seats<br>${state.currentTiers.length} price tiers</div></div></div>
       </div>
-
       <p class="desc">${e.desc}</p>
-
       ${sellersHTML}
-
       <div class="section-title">Select Your Tickets</div>
       <div id="tierList">${tiersHTML}</div>
-
       <div class="live-total">
         <div>
           <div class="lt-label">Running total</div>
@@ -1826,12 +1407,11 @@ function renderEventModal(){
         </div>
         <div style="text-align:right">
           <div class="lt-label">In basket</div>
-          <div class="lt-value" id="liveBasketTotal">${money(cartSubtotal())}</div>
-          <div class="lt-sub" id="liveBasketQty">${cartTotalQty()} ticket${cartTotalQty() === 1 ? '' : 's'}</div>
+          <div class="lt-value" id="liveBasketTotal">${money(cartSub())}</div>
+          <div class="lt-sub" id="liveBasketQty">${cartQty()} ticket${cartQty() === 1 ? '' : 's'}</div>
         </div>
       </div>
     </div>
-
     <div class="modal-footer">
       <div class="total-box">
         <div class="tl">Your selection</div>
@@ -1840,16 +1420,15 @@ function renderEventModal(){
       </div>
       <div class="footer-actions">
         <button class="btn-ghost" id="addToCartBtn" disabled>${ic('cart')}Add to Basket</button>
-        <button class="btn-buy purple" id="buyNowBtn" disabled>${ic('send')}Checkout on Telegram</button>
+        <button class="btn-buy" id="addViewBtn" disabled>${ic('eye')}Add &amp; Open Basket</button>
       </div>
-    </div>
-  `;
+    </div>`;
 
   $('tierList').addEventListener('click', ev => {
     const btn = ev.target.closest('button[data-step]');
     if (!btn) return;
-    const idx = parseInt(btn.dataset.idx, 10);
-    const delta = parseInt(btn.dataset.step, 10);
+    const idx = +btn.dataset.idx;
+    const delta = +btn.dataset.step;
     const tier = state.currentTiers[idx];
     const current = state.selection[tier.name] || 0;
     const next = Math.max(0, Math.min(8, current + delta));
@@ -1859,8 +1438,8 @@ function renderEventModal(){
   });
 
   $('closeEventModal').addEventListener('click', closeEventModal);
-  $('addToCartBtn').addEventListener('click', addSelectionToCart);
-  $('buyNowBtn').addEventListener('click', checkoutSelectionNow);
+  $('addToCartBtn').addEventListener('click', () => commitSelection(false));
+  $('addViewBtn').addEventListener('click', () => commitSelection(true));
 }
 
 function currentSelectionTiers(){
@@ -1884,23 +1463,15 @@ function refreshModalTotals(){
   const qty = Object.values(state.selection).reduce((s,q) => s + q, 0);
 
   $('modalTotal').textContent = money(total);
-  $('modalQty').textContent = qty === 0
-    ? 'No tickets selected'
-    : qty + ' ticket' + (qty === 1 ? '' : 's') + ' selected';
-
-  const liveTotal = $('liveTotal');
-  if (liveTotal){
-    liveTotal.textContent = money(total);
-    $('liveQty').textContent = qty === 0
-      ? 'No tickets selected'
-      : qty + ' ticket' + (qty === 1 ? '' : 's') + ' in this selection';
-    $('liveBasketTotal').textContent = money(cartSubtotal());
-    const cq = cartTotalQty();
-    $('liveBasketQty').textContent = cq + ' ticket' + (cq === 1 ? '' : 's');
-  }
+  $('modalQty').textContent = qty === 0 ? 'No tickets selected' : qty + ' ticket' + (qty === 1 ? '' : 's') + ' selected';
+  $('liveTotal').textContent = money(total);
+  $('liveQty').textContent = qty === 0 ? 'No tickets selected' : qty + ' ticket' + (qty === 1 ? '' : 's') + ' in this selection';
+  $('liveBasketTotal').textContent = money(cartSub());
+  const cq = cartQty();
+  $('liveBasketQty').textContent = cq + ' ticket' + (cq === 1 ? '' : 's');
 
   $('addToCartBtn').disabled = qty === 0;
-  $('buyNowBtn').disabled = qty === 0;
+  $('addViewBtn').disabled = qty === 0;
 }
 
 function closeEventModal(){
@@ -1908,120 +1479,90 @@ function closeEventModal(){
   document.body.style.overflow = '';
 }
 
-/* =========================================================
-   BUY FLOWS
-   ========================================================= */
-function checkoutSelectionNow(){
-  const tiers = currentSelectionTiers();
-  if (!tiers.length) return;
-  addToBasketInternal(state.currentEvent, tiers);
-  closeEventModal();
-  renderCart();
-  sendToTelegram(cartMessage());
-}
-
-function addSelectionToCart(){
+/* Commit selection from modal — never redirects to Telegram */
+function commitSelection(openBasketAfter){
   const e = state.currentEvent;
   const tiers = currentSelectionTiers();
   if (!tiers.length) return;
-  const added = addToBasketInternal(e, tiers);
+  const added = addToBasket(e, tiers);
   closeEventModal();
   renderCart();
-  toast(added + ' ticket' + (added === 1 ? '' : 's') + ' added to basket', 'cart', 'ok');
-  flashBasket();
+  if (openBasketAfter){
+    openDrawer();
+  } else {
+    toast(added + ' ticket' + (added === 1 ? '' : 's') + ' added to basket', 'cart', 'ok');
+  }
 }
 
-function addToBasketInternal(e, tiers){
+function addToBasket(e, tiers){
   let added = 0;
   tiers.forEach(t => {
     const key = e.id + '::' + t.name;
     const existing = state.cart.find(i => i.key === key);
-    if (existing){
-      existing.qty = Math.min(8, existing.qty + t.qty);
-    } else {
-      state.cart.push({ key, eventId:e.id, tier:t.name, price:t.price, qty:t.qty });
-    }
+    if (existing) existing.qty = Math.min(8, existing.qty + t.qty);
+    else state.cart.push({ key, eventId:e.id, tier:t.name, price:t.price, qty:t.qty });
     added += t.qty;
   });
   return added;
 }
 
 /* =========================================================
-   CART
+   CART RENDER
    ========================================================= */
 function renderCart(){
-  const qty = cartTotalQty();
-  const sub = cartSubtotal();
+  const qty = cartQty();
+  const sub = cartSub();
 
   $('cartCount').textContent = qty;
   $('drawerCount').textContent = qty + ' ticket' + (qty === 1 ? '' : 's');
-
   $('basketBubble').textContent = qty;
   $('basketCount').textContent = qty + ' ticket' + (qty === 1 ? '' : 's') + ' in basket';
   $('basketTotal').textContent = money(sub);
+
   if (state.cart.length){
-    const names = state.cart.slice(0, 2).map(i => {
-      const e = EVENTS.find(x => x.id === i.eventId);
-      return e ? e.title : '';
-    }).filter(Boolean);
+    const names = state.cart.slice(0, 2).map(i => EVENTS.find(x => x.id === i.eventId).title);
     const more = state.cart.length > 2 ? ' + ' + (state.cart.length - 2) + ' more' : '';
     $('basketItems').textContent = names.join(' · ') + more;
   } else {
     $('basketItems').textContent = '';
   }
 
-  if (qty > 0){
-    $('basketBar').classList.add('show');
-    $('toastStack').classList.add('raised');
-  } else {
-    $('basketBar').classList.remove('show');
-    $('toastStack').classList.remove('raised');
-  }
+  $('basketBar').classList.toggle('show', qty > 0);
+  $('toastStack').classList.toggle('raised', qty > 0);
 
   const body = $('cartItems');
   const foot = $('cartFoot');
 
   if (!state.cart.length){
-    body.innerHTML =
-      '<div class="cart-empty">' +
-        '<div class="big">' + ic('cart') + '</div>' +
-        '<h4>Your basket is empty</h4>' +
-        '<p>Browse events and add tickets<br>to see them here.</p>' +
-      '</div>';
-    foot.innerHTML =
-      '<button class="checkout-btn" disabled>' + ic('send') + 'Checkout on Telegram</button>' +
-      '<div class="secure-note">Orders are confirmed by <b style="color:#7dd3fc">@' + TELEGRAM_USER + '</b></div>';
+    body.innerHTML = '<div class="cart-empty"><div class="big">' + ic('cart') + '</div><h4>Your basket is empty</h4><p>Browse events and add tickets<br>to see them here.</p></div>';
+    foot.innerHTML = '<button class="checkout-btn" disabled>' + ic('send') + 'Checkout on Telegram</button><div class="secure-note">Basket checkout is confirmed by <b style="color:#7dd3fc">@' + TG_USER + '</b></div>';
     return;
   }
 
-  body.innerHTML = state.cart.map((item, idx) => {
+  body.innerHTML = state.cart.map(item => {
     const e = EVENTS.find(x => x.id === item.eventId);
-    return `
-      <div class="cart-item" style="animation-delay:${idx * 40}ms">
-        <div class="ci-poster">${posterSVG(e)}</div>
-        <div class="ci-info">
-          <div class="ci-title">${e.title}</div>
-          <div class="ci-tier">${item.tier}</div>
-          <div class="ci-meta">${fmtShort(e.date)} &middot; ${e.time} &middot; ${e.venue}</div>
-        </div>
-        <div class="ci-right">
-          <div class="ci-price">${money(item.price * item.qty)}</div>
-          <div class="ci-meta">${item.qty} &times; ${money(item.price)}</div>
-          <button class="ci-remove" data-remove="${item.key}">${ic('trash','ic-sm')}Remove</button>
-        </div>
-      </div>`;
+    return `<div class="cart-item">
+      <div class="ci-poster" style="background:linear-gradient(135deg,${e.gradient[0]},${e.gradient[1]})">${ic(e.icon)}</div>
+      <div class="ci-info">
+        <div class="ci-title">${e.title}</div>
+        <div class="ci-tier">${item.tier}</div>
+        <div class="ci-meta">${fmtShort(e.date)} &middot; ${e.time} &middot; ${e.venue}</div>
+      </div>
+      <div class="ci-right">
+        <div class="ci-price">${money(item.price * item.qty)}</div>
+        <div class="ci-meta">${item.qty} &times; ${money(item.price)}</div>
+        <button class="ci-remove" data-remove="${item.key}">${ic('trash')}Remove</button>
+      </div>
+    </div>`;
   }).join('');
 
-  foot.innerHTML =
-    '<div class="sum-row"><span>Subtotal (' + qty + ' tickets)</span><span>' + money(sub) + '</span></div>' +
-    '<div class="sum-row total"><span>Total</span><span>' + money(sub) + '</span></div>' +
-    '<button class="checkout-btn" id="goTelegram">' + ic('send') + 'Checkout on Telegram</button>' +
-    '<div class="secure-note">Details are copied automatically, then the chat<br>with <b style="color:#7dd3fc">@' + TELEGRAM_USER + '</b> opens in a new tab.</div>';
+  foot.innerHTML = '<div class="sum-row"><span>Subtotal (' + qty + ' tickets)</span><span>' + money(sub) + '</span></div>'
+    + '<div class="sum-row total"><span>Total</span><span>' + money(sub) + '</span></div>'
+    + '<button class="checkout-btn" id="goTelegram">' + ic('send') + 'Checkout on Telegram</button>'
+    + '<div class="secure-note">This is the only step that sends your order to <b style="color:#7dd3fc">@' + TG_USER + '</b>.</div>';
 
-  $('goTelegram').addEventListener('click', () => {
-    if (!state.cart.length) return;
-    sendToTelegram(cartMessage());
-  });
+  /* THE ONLY Telegram redirect in the whole app */
+  $('goTelegram').addEventListener('click', checkoutBasketOnTelegram);
 
   body.querySelectorAll('[data-remove]').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -2030,19 +1571,6 @@ function renderCart(){
       toast('Ticket removed from basket', 'trash', 'warn');
     });
   });
-}
-
-let basketFlashTimer;
-function flashBasket(){
-  const bar = $('basketBar');
-  if (!bar.classList.contains('show')) return;
-  bar.style.transition = 'transform .18s';
-  bar.style.transform = 'translateY(-6px)';
-  clearTimeout(basketFlashTimer);
-  basketFlashTimer = setTimeout(() => {
-    bar.style.transform = '';
-    setTimeout(() => { bar.style.transition = ''; }, 220);
-  }, 180);
 }
 
 /* =========================================================
@@ -2062,48 +1590,41 @@ $('cartBtn').addEventListener('click', openDrawer);
 $('closeDrawer').addEventListener('click', closeDrawer);
 $('drawerBackdrop').addEventListener('click', closeDrawer);
 
-/* =========================================================
-   BASKET BAR ACTIONS
-   ========================================================= */
-$('basketViewBtn').addEventListener('click', openDrawer);
-$('basketCheckoutBtn').addEventListener('click', () => {
-  if (!state.cart.length) return;
-  sendToTelegram(cartMessage());
-});
+/* Sticky bar opens the drawer — no redirect */
+$('basketOpenBtn').addEventListener('click', openDrawer);
 
 /* =========================================================
-   GLOBAL CLICK HANDLERS
+   GLOBAL CLICK — nothing here redirects except basket checkout
    ========================================================= */
 $('eventGrid').addEventListener('click', ev => {
-  /* PRICE IS DISPLAY-ONLY — block any navigation or redirect.
-     This runs before the buy / open handlers so a tap on the
-     price never triggers a Telegram redirect or the modal. */
-  if (ev.target.closest('[data-price]')){
+  // Price is display-only. Tapping it does nothing at all.
+  if (ev.target.closest('.price')){
     ev.preventDefault();
     ev.stopPropagation();
     return;
   }
 
-  const buy = ev.target.closest('[data-buy]');
-  if (buy){
+  // "Add to Basket" on a card: adds 1 base ticket, no redirect
+  const add = ev.target.closest('[data-add]');
+  if (add){
     ev.stopPropagation();
-    const e = EVENTS.find(x => x.id === parseInt(buy.dataset.buy, 10));
+    const e = EVENTS.find(x => x.id === +add.dataset.add);
     if (!e) return;
-    const tiers = tiersFor(e);
-    const base = tiers[0];
-    addToBasketInternal(e, [{ name:base.name, price:base.price, qty:1 }]);
+    const base = tiersFor(e)[0];
+    addToBasket(e, [{ name:base.name, price:base.price, qty:1 }]);
     renderCart();
     toast('1 ticket added to basket', 'cart', 'ok');
-    setTimeout(() => sendToTelegram(cartMessage()), 380);
     return;
   }
+
+  // Card body opens the event modal
   const open = ev.target.closest('[data-open]');
-  if (open) openEvent(parseInt(open.dataset.open, 10));
+  if (open) openEvent(+open.dataset.open);
 });
 
-/* Also guard the modal — clicking a tier price does nothing */
 $('eventModal').addEventListener('click', ev => {
-  if (ev.target.closest('[data-price]')){
+  // Tier price is also display-only.
+  if (ev.target.closest('.tier-price')){
     ev.preventDefault();
     ev.stopPropagation();
     return;
